@@ -5,7 +5,7 @@ var food_12;
 
 var food3;
 
-d3.json("img/beijing-municipality_1140 copy.geojson", function(json) {
+d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
   
   // width and height
   w = window.innerWidth;
@@ -17,9 +17,9 @@ d3.json("img/beijing-municipality_1140 copy.geojson", function(json) {
               .attr("width", w)
               .attr("height", h)
               // .classed("chart-wrap", true)
-              .call(d3.behavior.zoom().on("zoom", function () {
-                svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-              }))
+              // .call(d3.behavior.zoom().on("zoom", function () {
+              //   svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+              // }))
               // .append("g")
   ;
   
@@ -45,7 +45,7 @@ d3.json("img/beijing-municipality_1140 copy.geojson", function(json) {
   // projection.fitExtent([[116.2202,40.0239], [116.1214,40.1159]]);
 
     // var food_12;
-    // d3.json("img/2012_food.json", function(data) {
+    // d3.json("data/2012_food.json", function(data) {
     //     food_12 = svg.selectAll("circle")
     //         .data(data.features)
     //         .enter()
@@ -68,7 +68,7 @@ d3.json("img/beijing-municipality_1140 copy.geojson", function(json) {
     // });
   // food
   // var food;
-  // d3.json("img/food.json", function(data) {
+  // d3.json("data/food.json", function(data) {
   //   food = svg.selectAll("circle")
   //     .data(data.features)
   //     .enter()
@@ -108,7 +108,7 @@ d3.json("img/beijing-municipality_1140 copy.geojson", function(json) {
   //   ;
   // });
 
-    d3.json("img/food.json", function(data) {
+    d3.json("data/food.json", function(data) {
         food3 = svg.selectAll("circle")
             .data(data.features)
             .enter()

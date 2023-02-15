@@ -155,15 +155,14 @@ canvas {
   padding: 0;
   margin: auto;
   display: block;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  /*width: 100%;*/
   bottom: 0;
-  left: 0;
-  right: 0;
+
 
 }
-
+canvas{
+  padding-left: 100px; padding-right: 100px;
+}
 .year{
   background-color:rgba(0,0,0,0);
   margin: auto;
