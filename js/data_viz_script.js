@@ -1,185 +1,170 @@
-RadarChart.defaultConfig.color = function() {};
-RadarChart.defaultConfig.radius = 3;
-RadarChart.defaultConfig.w = 200;
-RadarChart.defaultConfig.h = 200;
 
-var data_education = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "elementary", value: 0.05},
-      {axis: "junior high", value: 0.24},
-      {axis: "senior high", value: 0.471},
-      {axis: "technical school", value: 0.168},
-      {axis: "college", value: 0.071}
-    ]
-  },
-];
-var data_age = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "18-20", value: 0.054},
-      {axis: "21-30", value: 0.51},
-      {axis: "31-40", value: 0.371},
-      {axis: "41-45", value: 0.065},
-    ]
-  },
-];
-var data_income = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "<2000", value: 0.04},
-      {axis: "2000-3999", value: 0.26},
-      {axis: "4000-5999", value: 0.44},
-      {axis: "6000-7999", value: 0.19},
-      {axis: "8000-9999", value: 0.05},
-      {axis: ">10000", value: 0.02},
+// GROUPS:  0 Web | 1: Adobe | 2: hybrid
+var data = [
+  {"id": 0, "name": "elementary", "r": 0.05},
+  {"id": 0, "name": "junior high", "r": 0.24 },
+  {"id": 0, "name": "senior high", "r": 0.471},
+  {"id": 0, "name": "technical school", "r": 0.168 },
+  {"id": 0, "name": "college", "r": 0.071},
 
-    ]
-  },
-];
-var data_activity = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "video", value: 0.363},
-      {axis: "game", value: 0.292},
-      {axis: "music", value: 0.282},
+  {"id": 1, "name": "18-20", "r": 0.054 },
+  {"id": 1, "name": "21-30", "r": 0.51 },
+  {"id": 1, "name":"31-40", "r": 0.371 },
+  {"id": 1, "name":"41-45", "r": 0.065 },
 
-    ]
-  },
-];
-var data_unpleasant = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "discrimination", value: 0.36},
-      {axis: "traffic accident", value: 0.293},
-      {axis: "scolded by customer", value: 0.257},
-    ]
-  },
-];
-var data_rating = [
-  {
-    className: 'grade', // optional can be used for styling
-    axes: [
-      {axis: "coworker relation", value: 8.1},
-      {axis: "flexible working time", value: 7.6},
-      {axis: "working environment", value: 7.4},
-      {axis: "income and benefit", value: 7.0},
-      {axis: "promotion", value: 6.5},
-      {axis: "social status", value: 6.0},
+  {"id": 2, "name": "<2000", "r": 0.04 },
+  {"id": 2, "name": "2000-3999", "r": 0.26 },
+  {"id": 2, "name":"4000-5999", "r": 0.44 },
+  {"id": 2, "name":"6000-7999", "r": 0.19 },
+  {"id": 2, "name":"8000-9999", "r": 0.05 },
+  {"id": 2, "name":">10000", "r": 0.02 },
 
-    ]
-  },
-  {
-    className: 'grade_bj', // optional can be used for styling
-    axes: [
-      {axis: "coworker relation", value: 7.8},
-      {axis: "flexible working time", value: 7.1},
-      {axis: "working environment", value: 7.2},
-      {axis: "income and benefit", value: 7.1},
-      {axis: "promotion", value: 6.2},
-      {axis: "social status", value: 5.4},
+  {"id": 3, "name": "video", "r": 0.363 },
+  {"id": 3, "name": "gaming", "r": 0.292 },
+  {"id": 3, "name": "music", "r": 0.282 },
 
-    ]
-  },
-];
-var data_help = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "media", value: 0.3},
-      {axis: "internet", value: 0.4},
-      {axis: "social group", value: 0.13},
-      {axis: "family", value: 0.29},
-      {axis: "friend", value: 0.35},
-      {axis: "company", value: 0.62},
+  {"id": 4, "name": "discrimination", "r": 0.36 },
+  {"id": 4, "name": "traffic accident", "r": 0.293 },
+  {"id": 4, "name": "scolded by customer", "r": 0.257 },
 
-    ]
-  },
+  // {"id": 5, "name": "coworker relation", "r": 8.1 },
+  // {"id": 5, "name": "flexible working time", "r": 7.6 },
+  // {"id": 5, "name": "working environment", "r": 7.4},
+  // {"id": 5, "name": "income and benefit", "r": 7.0},
+  // {"id": 5, "name": "promotion", "r": 6.5 },
+  //   {"id": 5, "name": "social status", "r": 6.0 },
+
+  //   {"id": 6, "name": "coworker relation", "r": 6.5 },
+  //  {"id": 6, "name": "flexible working hour", "r": 6.5 },
+  //  {"id": 6, "name": "working environment", "r": 6.5 },
+  // {"id": 6, "name": "income", "r": 6.5 },
+  //  {"id": 6, "name": "social status", "r": 6.5 },
+  {"id": 6, "name": "media", "r": 0.3 },
+  {"id": 6, "name": "internet", "r": 0.4 },
+  {"id": 6, "name": "social group", "r": 0.13 },
+  {"id": 6, "name": "family", "r": 0.29},
+  {"id": 6, "name": "friend", "r": 0.35 },
+  {"id": 6, "name": "company", "r": 0.62 },
+
+  {"id": 7, "name": "confident", "r": 0.761 },
+  {"id": 7, "name": "no increase", "r": 0.732 },
+  {"id": 7, "name": "replaced", "r": 0.8 },
+
+  {"id": 5, "name": "insurance", "r": 0.487 },
+  {"id": 5, "name": "labor right", "r": 0.451 },
+  {"id": 5, "name": "income security", "r": 0.348 },
+  {"id": 5, "name": "insurance", "r": 0.487 },
+
+  {"id": 8, "name": "higher salary", "r": 0.644 },
+  {"id": 8, "name": "humane treatment", "r": 0.567 },
+  {"id": 8, "name": "policy", "r": 0.244 },
+
 ];
 
-var data_confidence = [
-  {
-    className: 'percent', // optional can be used for styling
-    axes: [
-      {axis: "confident", value: 0.761},
-      {axis: "no increase", value: 0.732},
-      {axis: "replaced", value: 0.8},
+// var width = window.innerWidth,
+    // height = 750;
+const demand_width = document.getElementById('demand').getBoundingClientRect().width - consti_margin.left - consti_margin.right;
+const demand_height = document.getElementById('demand').getBoundingClientRect().height - consti_margin.top - consti_margin.bottom;
+
+var fill = d3.scale.category10();
+
+var nodes = [], labels = [],
+    foci = [{x: 0, y: 500}, {x: 150, y: 150}, {x: 300, y: 500},
+      {x: 450, y: 150}, {x: 600, y: 500}, {x: 750, y: 150},
+      {x: 900, y: 500}, {x: 1050, y: 150}, {x: 1300, y: 500}];
+// function dataViz(){
 
 
-    ]
-  },
-];
+  var svgdemand = d3.select("#demand").append("svg")
+      .attr("width", "100%")
+      .attr("height", demand_height)
+  //.attr("domflag", '');
 
-var data_asking = [
-  {
-    className: 'all', // optional can be used for styling
-    axes: [
-      {axis: "insurance", value: 0.487},
-      {axis: "labor right", value: 0.451},
-      {axis: "income security", value: 0.348},
+  var force = d3.layout.force()
+      .nodes(nodes)
+      .links([])
+      .charge(-400)
+      //.chargeDistance(200)
+      .gravity(0.1)
+      .friction(0.8)
+      .size([demand_width, demand_height])
+      .on("tick", tick);
 
-    ]
-  },
-  {
-    className: 'bj', // optional can be used for styling
-    axes: [
-      {axis: "insurance", value: 0.485},
-      {axis: "labor right", value: 0.485},
-      {axis: "income security", value: 0.362},
+  //var node = svg.selectAll("circle");
+  var nodedemand = svgdemand.selectAll("#demand>g");
+
+  var counter = 0;
+
+  function tick(e) {
+    var k = 0.35 * e.alpha;
+
+    // Push nodes toward their designated focus.
+    nodes.forEach(function(o, i) {
+      o.y += (foci[o.id].y - o.y) * k;
+      o.x += (foci[o.id].x - o.x) * k;
+    });
+
+    nodedemand.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  }
 
 
-    ]
-  },
-];
-var data_asking_employer = [
-  {
-    className: 'all', // optional can be used for styling
-    axes: [
-      {axis: "higher salary", value: 0.644},
-      {axis: "humanitarian benefit", value: 0.567},
-      {axis: "better policy", value: 0.244},
-    ]
-  },
-  {
-    className: 'bj', // optional can be used for styling
-    axes: [
-      {axis: "higher salary", value: 0.678},
-      {axis: "humanitarian benefit", value: 0.66},
-      {axis: "better policy", value: 0.234},
-    ]
-  },
-];
+  var timer = setInterval(function(){
 
-dataList=[data_education,data_age,data_income,data_unpleasant,data_rating,data_help,data_confidence,data_activity,data_asking,data_asking_employer]
-datanameList=["education","age","income","unpleasant","rating","resort to help","confidence level","activities in spare time","demand for government","demand for employer"]
+    if (nodes.length > data.length-1) { clearInterval(timer); return;}
 
-let coords;
-for (let i=0;i<dataList.length;i++){
-  var chart = RadarChart.chart();
-  var cfg = chart.config();
+    var item = data[counter];
+    nodes.push({id: item.id, r: item.r, name: item.name});
+    force.start();
+    console.log(force.drag)
 
-  var group = d3.select('body').append('g')
-      .attr('width', cfg.w )
-      .attr('height', cfg.h );
-  var text = group
-      .append("text")
-      .attr("class","caption")
-      .text(datanameList[i]);
-  var svg = group.append('svg')
-      .attr('width', cfg.w )
-      .attr('height', cfg.h );
-  // group.append(svg)// retrieve default config
+    nodedemand = nodedemand.data(nodes);
 
-      // .attr("cx",coords[0])
-      // .attr("cy",coords[1])
-  svg.append('g').classed('single', 1)
-      .datum(dataList[i])
-      .call(chart);
-}
+    var n = nodedemand.enter().append("g")
+        .attr("class", "node")
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+        .style('cursor', 'pointer')
+        .on('mousedown', function() {
+          var sel = d3.select(this);
+          sel.moveToFront();
+        })
+        .call(force.drag);
 
-// render();
+    n.append("circle")
+        .attr("r",  function(d) { return 100*d.r; })
+        .style("stroke", "#36ff00")
+        .style("fill", "none")
+
+        .style("stroke-width", 0.61)
+
+
+    // .style("fill", function(d) { return fill(d.id); })
+
+    n.append("text")
+        .text(function(d){
+          return d.name+"~"+d.r;
+        })
+        .style("fill", "#ffffff")
+
+        .style("font-size", function(d) {
+          return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 16) + "px";
+        })
+        .attr("dy", ".35em")
+
+    counter++;
+  }, 100);
+
+
+  d3.selection.prototype.moveToFront = function() {
+    return this.each(function(){
+      this.parentNode.appendChild(this);
+    });
+};
+  function resize() {
+    force.size([demand_width, demand_height]);
+    force.start();
+  }
+
+  d3.select(window).on('resize', resize);
+// };
+

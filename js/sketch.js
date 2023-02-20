@@ -10,16 +10,16 @@ const gear_height = document.getElementById('gear-container').getBoundingClientR
 
 // const cWidth=1200;
 // const cHeight=900;
-let nodeNum = 25;
+let nodeNum = 35;
 const nodesbegin = new Array();
 
-const nodes = new Array();
+const nodesop = new Array();
 const nodesGear = new Array();
 
 // const timer = millis()
 const radius=50;
 let speedRate=0.005;
-const splitline=0.65;
+// const splitline=0.65;
 
 
 function setup() {
@@ -30,10 +30,12 @@ function setup() {
 
   for (let i = 0; i < nodeNum; i++) {
     let x = 0.85*(60+i/nodeNum * gear_width);
-    let y = random(0.3*gear_height,0.7*gear_height);
+    // let x = random(0.1*gear_width,0.9*gear_width);
+
+    let y = random(0.1*gear_height,0.9*gear_height);
     ellipse(x, y, 10, 10);
     nodesbegin.push(createVector(x, y));
-    nodes.push(createVector(x, y));
+    nodesop.push(createVector(x, y));
 
     nodesGear.push(createVector(x, y-300));
 
@@ -75,21 +77,19 @@ function draw() {
   setLineDash([1,2]);
 
   for (let i = 0; i < nodeNum; i++) {
-    nodes[i].x = nodesbegin[i].x + radius*Math.sin(speedRate*frameCount+i);
-    nodes[i].y = nodesbegin[i].y + radius*Math.cos(speedRate*frameCount+i);
-    ellipse(nodes[i].x, nodes[i].y, 2, 2);
-    let l= i%3;
+    nodesop[i].x = nodesbegin[i].x + radius*Math.sin(speedRate*frameCount+i);
+    nodesop[i].y = nodesbegin[i].y + radius*Math.cos(speedRate*frameCount+i);
+    ellipse(nodesop[i].x, nodesop[i].y, 2, 2);
+    let l= i%5;
     if(l==0){
       stroke(255, 255, 255)
-      strokeWeight(0.15);
       fill(0,0,0);
+      strokeWeight(0.35);
 
-      ellipse(nodesbegin[i].x, nodesbegin[i].y+200, 2*radius, 2*radius);
+      ellipse(nodesbegin[i].x, nodesbegin[i].y, 2*radius, 2*radius);
 
-      fill(255,255,255);
-      ellipse(nodes[i].x, nodes[i].y+200, 2, 2);
-      strokeWeight(0.15);
-      line(nodes[i].x,nodes[i].y+200,nodes[i].x,nodes[i].y)
+      // fill(255,255,255);
+      // line(nodes[i].x,nodes[i].y+00,nodes[i].x,nodes[i].y)
       // strokeWeight(0.01);
 
     };
@@ -103,17 +103,19 @@ function draw() {
 
   // draw lines
   for (let i = 0; i < nodeNum - 1; i++) {
-    let n = nodes[i];
+    let n = nodesop[i];
     for (let j = i + 1; j < nodeNum; j++) {
-      let m = nodes[j];
-      if (dist(n.x, n.y, m.x, m.y) < 300) {
-        strokeWeight(0.3);
-         //another dashed line pattern
-
+      let m = nodesop[j];
+      if (dist(n.x, n.y, m.x, m.y) < 500) {
+        strokeWeight(0.15);
         line(n.x, n.y, m.x, m.y);
+        //another dashed line pattern
+        fill(0,100,0);
+        strokeWeight(0);
+
+        ellipse(n.x, n.y, 5, 5);
+
         stroke(255, 255, 255)
-
-
 
 
       }}};
@@ -131,7 +133,7 @@ function draw() {
  * is pressed over the canvas.
  */
 function mousePressed() {
-  console.log(mouseX + " " + mouseY);
+  // console.log(mouseX + " " + mouseY);
 };
 function setLineDash(list) {
   drawingContext.setLineDash(list);

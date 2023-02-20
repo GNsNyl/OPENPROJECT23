@@ -1,4 +1,5 @@
-body{ background-color: #000000;}
+body{ background-color: #000000;
+overflow-x: hidden}
 
 /*HEADER______________________________________________________________________________________________________________*/
 .header{ padding-top: 100px; padding-bottom: 50px}
@@ -29,6 +30,8 @@ label, .tick{ color:white; font-size: 12px; line-height: 30px; letter-spacing: 1
 h1{font-size: 30px; color: white; font-family: 'Roboto', sans-serif;
     letter-spacing: 1px; text-transform: uppercase; padding-top: 25px; padding-bottom: 25px;}
 .text-col { column-width: 33vw;}
+h2{font-size: 15px; color: white; font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px; text-transform: uppercase; margin-top: -30px; padding-bottom: 25px;}
 
 /*BORDER______________________________________________________________________________________________________________*/
 hr.solid {border-top: 0.5px solid rgb(255, 255, 255);}
@@ -86,4 +89,41 @@ button:hover{ text-decoration: underline; cursor:pointer;}
 #text1, #text2 { z-index: 1000; margin: auto; position: fixed; width: 100%; display: inline-block;
     font-family: 'Roboto', sans-serif; font-size: 60pt; text-align: center; user-select: none;}
 
+/*CONSTITUENCIES______________________________________________________________________________________________________________*/
 
+#tag {
+    /*width: 50%;*/
+    /*left:0;*/
+    color: white;
+    position: absolute;
+    display: none;
+    opacity: .85;
+    border-radius:2px;
+    border:1px solid white;
+    padding:3px 6px;
+    margin:auto;
+}
+.svg-container {
+    margin:auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.node {
+    cursor: pointer;
+}
+.edge {
+    fill: none;
+    stroke: #ffffff;
+
+    /*stroke: #657b83;*/
+    stroke-width: .75px;
+}
+
+/*DEMAND______________________________________________________________________________________________________________*/
+
+
+text{
+   font-size: x-small;
+}

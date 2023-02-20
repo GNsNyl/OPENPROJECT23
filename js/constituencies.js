@@ -1,3 +1,7 @@
+const consti_margin = {top: 0, right: 0, bottom: 0, left: 0};
+const consti_width = document.getElementById('consti-container').getBoundingClientRect().width - consti_margin.left - consti_margin.right;
+const consti_height = document.getElementById('consti-container').getBoundingClientRect().height - consti_margin.top - consti_margin.bottom;
+
 var jsonDom = {
 	"name" : "gig economy" , "children" : [
 
@@ -288,7 +292,7 @@ var jsonDom = {
 	}]
 };
 
-var diameter = 1000;
+var diameter = 1200;
 
   		var tree = d3.layout
 			.tree()
@@ -308,10 +312,10 @@ var diameter = 1000;
 		var col = d3.scale.category20c();
 
 		var svgC = d3.select('.svg-container')
-			.append("svg").attr("width", 1000)
-			.attr("height", diameter)
+			.append("svg").attr("width", consti_width)
+			.attr("height", consti_height)
 			.append("g")
-			.attr("transform", "translate(" + 350 + "," + 275 + ")rotate(" + rotate(60) + ")");
+			.attr("transform", "translate(" + consti_width/2 + "," + diameter/3 + ")rotate(" + rotate(60) + ")");
 
 			//d3.json(jsonDom, function(error, root) {
 		var nodes = tree.nodes(jsonDom);
@@ -358,9 +362,12 @@ var diameter = 1000;
 		node.append("circle")
 		.attr("r", function(d) {
 			return (radiusScale(d.y));
-		}).style("fill", function(d) {
-			return col(d.name);
-		});
+		})
+			.style("fill",
+			"#36ff00"
+			// 	function(d) {
+			// return col(d.name);}
+		);
 
 		node.transition()
 		.duration(2000)

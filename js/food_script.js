@@ -1,11 +1,39 @@
 // CHART
 var w,h;
+const map_margin = {top: 0, right: 0, bottom: 0, left: 0};
+const map_width = document.getElementById('map').getBoundingClientRect().width - map_margin.left - map_margin.right;
+const map_height = document.getElementById('map').getBoundingClientRect().height - map_margin.top - map_margin.bottom;
+
 let svg,projection,land,world ;
 var food_12;
 
 var food3;
 
-d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
+const button_chart = document.getElementsByName('rest-map');
+let button_chart_value_yr = '2022';
+let foodData="data/food2022.json";
+const colorPalette=['#36ff00','#ffffff']
+plotMap(foodData,colorPalette[0]);
+
+function displayRestValue() {
+    // console.log(foodData);
+
+    for (let i = 0; i < button_chart.length; i++) {
+        if (button_chart[i].checked){
+            button_chart_value_yr = button_chart[i].value;
+            // console.log(button_chart_value_yr);
+            foodData="data/food"+button_chart_value_yr+".json";
+            // console.log(foodData);
+            d3.selectAll("#map > *").remove();
+            plotMap(foodData,colorPalette[i]);
+        }
+    }
+};
+
+function plotMap(foodData,color){
+
+
+    d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
   
   // width and height
   w = window.innerWidth;
@@ -36,12 +64,23 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
   world = svg.selectAll("path")
     .data(json.features)
     .enter()
+
     .append("path")
     .attr("d", land)
     // .style("fill", "#000000")
+
       .style("stroke-width", 0.6)
 
-      .style('stroke', '#ffffff');
+      .style('stroke', "#ffffff")
+      .style("opacity", 0)
+
+      .transition()
+      .delay(1000)
+      .duration(2000)
+      .style("opacity", 1)
+  ;
+
+
   // projection.fitExtent([[116.2202,40.0239], [116.1214,40.1159]]);
 
     // var food_12;
@@ -108,8 +147,8 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
   //   ;
   // });
 
-    d3.json("data/food.json", function(data) {
-        food3 = svg.selectAll("circle")
+    d3.json(foodData, function(data) {
+        food3 = svg.selectAll("#map > circle")
             .data(data.features)
             .enter()
             .append("circle")
@@ -122,15 +161,15 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
             //     return 220
             // })
             .attr("cx", function(d) {
-                return 800;
+                return map_width/2;
             })
             .attr("cy", function(d) {
-                return 800;
+                return map_height/2;
             })
 
             .style("fill", "none")
 
-            .style("stroke", "#24ff00")
+            .style("stroke", color)
             .style("stroke-width", 0.1)
 
 
@@ -141,10 +180,10 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
             .delay(1000)
             .duration(2000)
             .attr("cx", function(d) {
-                return projection([d.LONGCJ02, d.LATGCJ02])[0];
+                return projection([d.LON, d.LAT])[0];
             })
             .attr("cy", function(d) {
-                return projection([d.LONGCJ02, d.LATGCJ02])[1];
+                return projection([d.LON, d.LAT])[1];
             })
         ;
     });
@@ -326,15 +365,17 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
 });
 
 
-window.onresize=function updateWindow(){
-    w = window.innerWidth || e.clientWidth || g.clientWidth;
-    h = window.innerHeight|| e.clientHeight|| g.clientHeight;
+// window.onresize=function updateWindow(){
+//     w = window.innerWidth || e.clientWidth || g.clientWidth;
+//     h = window.innerHeight|| e.clientHeight|| g.clientHeight;
+//
+//     svg.attr("width", w).attr("height", h);
+//     projection = d3.geo.mercator().translate([w/2, h/2]);
+//     land.projection(projection);
+//     world.attr("d", land);
+//     // food3.attr("cx", function(d) {
+//     //     return projection([d.LONGCJ02, d.LATGCJ02])[0];
+//     // });
+// };
 
-    svg.attr("width", w).attr("height", h);
-    projection = d3.geo.mercator().translate([w/2, h/2]);
-    land.projection(projection);
-    world.attr("d", land);
-    // food3.attr("cx", function(d) {
-    //     return projection([d.LONGCJ02, d.LATGCJ02])[0];
-    // });
-};
+}
