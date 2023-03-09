@@ -14,7 +14,13 @@
 <!--	<link rel="stylesheet" href="/css/style2.css">-->
 
 	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+	<link href="fonts/roboto" rel="stylesheet">
+	<style>
+		*{
+			cursor:auto;
+		}
+	</style>
+
 
 </head>
 
@@ -36,9 +42,9 @@
 <hr class="solid">
 <div class="section">
 	<div class="row">
-		<div class="col-sm-8 title"> All Things Assembled </div>
-		<div class="col-sm-2 title-desc"> Data |Art </div>
-		<div class="col-sm-1 title-desc"> Final </div>
+		<div class="col-sm-8 title"> Fresh Off The Fridge<br>黄瓜顶花带刺 </div>
+		<div class="col-sm-2 title-desc"> Gig Econ <br> Data Viz <br> Installation </div>
+		<div class="col-sm-1 title-desc"> Forms of Assembly </div>
 		<div class="col-sm-1 title-desc"> May 2023 </div>
 	</div>
 </div>
@@ -48,7 +54,7 @@
 	<div class="row">
 		<div class="col-sm-8 title-label"> Title </div>
 		<div class="col-sm-2 title-desc-label"> Category </div>
-		<div class="col-sm-1 title-desc-label"> Assignment </div>
+		<div class="col-sm-1 title-desc-label"> Course </div>
 		<div class="col-sm-1 title-desc-label"> Date </div>
 	</div>
 </div>
@@ -75,8 +81,10 @@
 
 
 	</div>
-	<div style="height:70vh;padding-left: 100px">
-		<div id="gear-container"  style="height: 100%; margin-top:-10%;width:100%; z-index:-1;position:absolute"></div>
+	<div style="height:70vh;padding-left: 0px">
+<!--		<div id="gear-container"  style="height: 100%; margin-top:-10%;width:100%; z-index:-1;position:absolute"></div>-->
+		<div id="gear-container"  style="height: 100%;width:100%;top:0;pointer-events: none; z-index:100;position:fixed"></div>
+
 	</div>
 
 
@@ -117,8 +125,6 @@ maps the intersectional movement across political economic and technological con
 <!--		Zwick, Austin. 2018. “Welcome to the Gig Economy: Neoliberal Industrial Relations and the Case of Uber.” GeoJournal 83 (4): 679–91. https://doi.org/10.1007/ s10708-017-9793-8.-->
 <!--	</p>-->
 
-
-
 </div>
 
 <div style="height:70vh" id="consti-container">
@@ -143,12 +149,8 @@ maps the intersectional movement across political economic and technological con
 	</div>
 	<div class="section" >
 		<div class="container" data-toggle="buttons" onchange="displayRestValue()">
-<!--			<label><input class="option-input radio" type="radio" name="rest-map" value="All" checked>All</label>-->
 			<label><input class="option-input radio" type="radio" name="rest-map" value="2022">2022</label>
 			<label><input class="option-input radio" type="radio" name="rest-map" value="2012">2012</label>
-<!--			<label><input class="option-input radio" type="radio" name="rest-map" value="Bronx">Bronx</label>-->
-<!--			<label><input class="option-input radio" type="radio" name="rest-map" value="Queens">Queens</label>-->
-<!--			<label><input class="option-input radio" type="radio" name="rest-map" value="Brooklyn">Brooklyn</label>-->
 		</div>
 	</div>
 
@@ -201,6 +203,7 @@ maps the intersectional movement across political economic and technological con
 <!--SECTION SIX-------------------------------------------------------------------------------------------------------------------------------->
 <!--`````REFLECTION---------------------------------------------------------------------------------------------------------------------------->
 
+
 <div class="section">
 	<h1>Survey</h1>
 	<p class="text-col"> A survey of 6196 samples conducted by 199it research team and Chinese Academy of Social Sciences shows the distribution regarding age, education level,
@@ -210,74 +213,94 @@ maps the intersectional movement across political economic and technological con
 </div>
 <div>
 	<!--		<div id="tool-fixed" style="width: 300px;position:absolute"></div>-->
-	<div id="demand" style="height: 70%; padding-left: 100px; width:100%; position:absolute"></div>
+	<div id="demand" style="height: 70%; padding-left: 100px; width:90%; position:absolute"></div>
 	<!--		<div id="tool" style="width: 300px; margin:auto;"></div>-->
 </div>
 
+<!--SECTION SEVEN-------------------------------------------------------------------------------------------------------------------------------->
+
+
+<div class="section" style="margin-top:60vh ">
+<h1>Restaurant Update</h1>
+<!--	<div class="section" >-->
+<!--		<div class="container" data-toggle="buttons" onchange="displayRestCount()">-->
+<!--			<label><input class="option-input radio" type="radio" name="rest-count" value="2022">2022</label>-->
+<!--			<label><input class="option-input radio" type="radio" name="rest-count" value="2012">2012</label>-->
+<!--		</div>-->
+<!--	</div>-->
+	<div id="restaurant-bar-container"></div>
+	<p class="text-col"> alized and contextualized the discussion of the social and occupational precarity of gig workers, the absence of legislative protection of this new form of labor, and the structural inequity of social distribution.
+	</p>
+</div>
+
+<div class="section"style="height: 70vh;margin-top:60vh "  >
+	<h1>population</h1>
+	<div id="pop-container" style="height: 70%; width:100%; position:absolute;"></div>
+	<div id="tool" style="width: 300px; margin:auto;"></div>
+</div>
+<div class="section"style="margin-top:60vh "  >
+	<h1>Zhongguancun</h1>
+	<div id="zgc-container" style="height: 70%; width:100%; position:absolute;"></div>
+	<div id="zgc-road-container" style="height: 70%; width:100%; position:absolute;"></div>
+	<div id="zgc-building-container" style="height: 70%; width:100%; position:absolute;"></div>
+	<div id="zgc-count-container" style="height: 70%; width:100%; position:absolute;"></div>
+
+	<div id="zgc-food-container" style="height: 70%; width:100%; position:absolute;"></div>
+
+	<div id="zgc-tool" style="width: 300px; margin:auto;"></div>
+</div>
+
+<div class="section"style="margin-top:80vh "  >
+	<h1>Wordcloud</h1>
+	<div id="word-cloud-container" style="height: 70%; width:100%; position:absolute;"></div>
+	<div id="word-tool" style="width: 300px; margin:auto; pointer-events: none"></div>
+</div>
+<br><br><br><br><br><br>
 
 <!-- embedding JS libraries -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="js/libraries/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 <!-- d3 -->
 <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
 <script src='/js/d3.min.js'></script>
 <script src='/js/d3.v7.min.js'></script>
 
-<!-- own js files -->
-<!--<script src="js/link.js"></script>-->
-<!--<script src="/js/packing.js"></script>-->
-<!--<script src="/js/timeSeries.js"></script>-->
-
 
 <!-- landing -->
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/libraries/jquery-3.2.1.js"></script>
 <script src='/js/three.min.js'></script>
-<script src='https://assets.codepen.io/127738/simplex-noise.js'></script>
-<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js' crossorigin="anonymous"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js'></script>
-	<script type="text/javascript" src="js/p5.js"></script>
+<script src='js/libraries/simplex-noise.js'></script>
+<script src='js/libraries/gsap.min.js'></script>
+<script type="text/javascript" src="js/p5.js"></script>
 
 <!-- landing: own js -->
-	<script  src="/js/sketch.js"></script>
-	<!-- constituencies diagram  -->
-		<script src='https://d3js.org/d3.v3.min.js'></script>
+
+<!--	<script  src="/js/sketch.js"></script>-->
+
+<!-- constituencies diagram  -->
+	<script src='js/libraries/d3.v3.min.js'></script>
+<!--<script src='js/libraries/d3.v4.min.js'></script>-->
+<script src="js/libraries/d3.layout.cloud.js"></script>
+
 	<script  src="./js/constituencies.js"></script>
 
 
-
 <!--mapping: own js-->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js'></script>
-<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js'></script><script  src="./js/script.js"></script>-->
+<script src='js/libraries/react.production.min.js'></script>
+<script src='js/libraries/react-dom.production.min.js'></script>
+
+<script  src="./js/restaurant-plot.js"></script>
 <script  src="./js/food_script.js"></script>
+<script  src="./js/pop.js"></script>
+<script  src="./js/zgc.js"></script>
+<script  src="./js/wordcloud.js"></script>
+
+
+
 <!--demanding: own js-->
 
-<script  src="./js/data_viz_script.js"></script>
+<!--<script  src="./js/data_viz_script.js"></script>-->
 
-<!--<script type="text/javascript">-->
-<!--	// const scroller = document.querySelector("#scroller");-->
-<!--	// const output = document.querySelector("#output");-->
-<!--	//-->
-<!--	// scroller.addEventListener("scroll", (event) => {-->
-<!--	// 	if(${scroller.scrollTop} >800){-->
-<!--	// 		dataViz()-->
-<!--	//-->
-<!--	// 	}-->
-<!--	// });-->
-
-<!--	$(document).ready(function(){-->
-<!--		$(window).scroll(function(){-->
-<!--			if($(this).scrollTop() == 600){-->
-<!--				dataViz()-->
-<!--			}-->
-<!--			// else {-->
-<!--			// 	$(".open-page").css({"opacity" : "1"});-->
-<!--			// 	$(".wide").css({"opacity" : "1"})-->
-<!--			// }-->
-<!--		})-->
-<!--	})-->
-<!--</script>-->
 
 </body>
 </html>

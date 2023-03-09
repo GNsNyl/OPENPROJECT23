@@ -69,14 +69,14 @@ const demand_height = document.getElementById('demand').getBoundingClientRect().
 var fill = d3.scale.category10();
 
 var nodes = [], labels = [],
-    foci = [{x: 0, y: 500}, {x: 150, y: 150}, {x: 300, y: 500},
-      {x: 450, y: 150}, {x: 600, y: 500}, {x: 750, y: 150},
-      {x: 900, y: 500}, {x: 1050, y: 150}, {x: 1300, y: 500}];
+    foci = [{x: 0, y: 500}, {x: 0.15*demand_width, y: 150}, {x: 0.3*demand_width, y: 500},
+      {x: 0.3*demand_width, y: 150}, {x: 0.45*demand_width, y: 500}, {x: 0.6*demand_width, y: 150},
+      {x: 0.6*demand_width, y: 500}, {x: 0.75*demand_width, y: 150}, {x: 0.9*demand_width, y: 500}];
 // function dataViz(){
 
 
   var svgdemand = d3.select("#demand").append("svg")
-      .attr("width", "100%")
+      .attr("width", demand_width)
       .attr("height", demand_height)
   //.attr("domflag", '');
 
@@ -133,9 +133,10 @@ var nodes = [], labels = [],
     n.append("circle")
         .attr("r",  function(d) { return 100*d.r; })
         .style("stroke", "#36ff00")
+        .style("stroke-dasharray",3)
         .style("fill", "none")
 
-        .style("stroke-width", 0.61)
+        .style("stroke-width", 6.61)
 
 
     // .style("fill", function(d) { return fill(d.id); })

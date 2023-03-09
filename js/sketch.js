@@ -10,15 +10,15 @@ const gear_height = document.getElementById('gear-container').getBoundingClientR
 
 // const cWidth=1200;
 // const cHeight=900;
-let nodeNum = 35;
+let nodeNum = 15;
 const nodesbegin = new Array();
 
-const nodesop = new Array();
-const nodesGear = new Array();
+// const nodesop = new Array();
+// const nodesGear = new Array();
 
 // const timer = millis()
 const radius=50;
-let speedRate=0.005;
+// let speedRate=0.005;
 // const splitline=0.65;
 
 
@@ -27,17 +27,17 @@ function setup() {
   const cns=createCanvas(gear_width, gear_height);
   cns.parent("#gear-container");
 
-
+ellipse(mouseX,mouseY,2,2)
   for (let i = 0; i < nodeNum; i++) {
     let x = 0.85*(60+i/nodeNum * gear_width);
     // let x = random(0.1*gear_width,0.9*gear_width);
 
-    let y = random(0.1*gear_height,0.9*gear_height);
+    let y = random(gear_height,gear_height);
     ellipse(x, y, 10, 10);
     nodesbegin.push(createVector(x, y));
-    nodesop.push(createVector(x, y));
+    // nodesop.push(createVector(x, y));
 
-    nodesGear.push(createVector(x, y-300));
+    // nodesGear.push(createVector(x, y-300));
 
   };
 
@@ -77,53 +77,54 @@ function draw() {
   setLineDash([1,2]);
 
   for (let i = 0; i < nodeNum; i++) {
-    nodesop[i].x = nodesbegin[i].x + radius*Math.sin(speedRate*frameCount+i);
-    nodesop[i].y = nodesbegin[i].y + radius*Math.cos(speedRate*frameCount+i);
-    ellipse(nodesop[i].x, nodesop[i].y, 2, 2);
-    let l= i%5;
-    if(l==0){
-      stroke(255, 255, 255)
-      fill(0,0,0);
+    // nodesop[i].x = nodesbegin[i].x + radius*Math.sin(speedRate*frameCount+i);
+    // nodesop[i].y = nodesbegin[i].y + radius*Math.cos(speedRate*frameCount+i);
+    // ellipse(nodesop[i].x, nodesop[i].y, 2, 2);
+    // let l= i%5;
+    // if(l==0){
+      stroke(0, 255, 0)
+      fill(0,255,0);
       strokeWeight(0.35);
 
-      ellipse(nodesbegin[i].x, nodesbegin[i].y, 2*radius, 2*radius);
+      ellipse(nodesbegin[i].x, nodesbegin[i].y, 2, 2);
+      line(mouseX,mouseY,nodesbegin[i].x,nodesbegin[i].y)
 
       // fill(255,255,255);
       // line(nodes[i].x,nodes[i].y+00,nodes[i].x,nodes[i].y)
       // strokeWeight(0.01);
 
-    };
+    // };
     // ellipse(nodes[i].x, nodes[i].y+200, 2, 2);
 
     // nodes.push(createVector(x, y));
   }
   // console.log(nodes[1].x)
-  const w=10;
-  const h=10;
+  // const w=10;
+  // const h=10;
 
-  // draw lines
-  for (let i = 0; i < nodeNum - 1; i++) {
-    let n = nodesop[i];
-    for (let j = i + 1; j < nodeNum; j++) {
-      let m = nodesop[j];
-      if (dist(n.x, n.y, m.x, m.y) < 500) {
-        strokeWeight(0.15);
-        line(n.x, n.y, m.x, m.y);
-        //another dashed line pattern
-        fill(0,100,0);
-        strokeWeight(0);
-
-        ellipse(n.x, n.y, 5, 5);
-
-        stroke(255, 255, 255)
-
-
-      }}};
-
-
+  // // draw lines
+  // for (let i = 0; i < nodeNum - 1; i++) {
+  //   let n = nodesop[i];
+  //   for (let j = i + 1; j < nodeNum; j++) {
+  //     let m = nodesop[j];
+  //     if (dist(n.x, n.y, m.x, m.y) < 500) {
+  //       strokeWeight(0.15);
+  //       line(n.x, n.y, m.x, m.y);
+  //       //another dashed line pattern
+  //       fill(0,100,0);
+  //       strokeWeight(0);
+  //
+  //       ellipse(n.x, n.y, 5, 5);
+  //
+  //       stroke(255, 255, 255)
+  //
+  //
+  //     }}};
 
 
-  speedRate=0.01+mouseX/15000;
+
+
+  // speedRate=0.01+mouseX/15000;
 
 
 }

@@ -69,7 +69,7 @@ function plotMap(foodData,color){
     .attr("d", land)
     // .style("fill", "#000000")
 
-      .style("stroke-width", 0.6)
+      .style("stroke-width", 3)
 
       .style('stroke', "#ffffff")
       .style("opacity", 0)
