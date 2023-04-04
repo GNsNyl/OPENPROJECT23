@@ -1,6 +1,6 @@
 var bmargin  = {top: 20, right: 20, bottom: 100, left: 60},
     bwidth   = document.getElementById('restaurant-bar-container').getBoundingClientRect().width - bmargin.left - bmargin.right,
-    bheight  = 400 - bmargin.top - bmargin.bottom,
+    bheight  = 600 - bmargin.top - bmargin.bottom,
     x       = d3.scale.ordinal().rangeRoundBands([0,bwidth], 0.5),
     y       = d3.scale.linear().range([bheight,0]);
 
@@ -60,7 +60,7 @@ d3.json("data/foodtype_both.json", function (data)
         .selectAll("text")
         .style("text-anchor", "middle")
         .attr("dx", "-2.5em")
-        .attr("dy", "-2em")
+        .attr("dy", "-2.9em")
         .attr("y", 30)
         .attr("transform", "rotate(-90)" );
 
@@ -80,13 +80,13 @@ d3.json("data/foodtype_both.json", function (data)
         .data(data)
         .enter()
         .append("rect")
-        .style("fill", "white")
+        .style("fill", "#36ff00")
         .attr("class","2022")
         .attr("x", function(d)
         {
             return x(d.typecode);
         })
-        .attr("width", x.rangeBand()/2)
+        .attr("width", x.rangeBand()/10)
         .attr("y", function (d)
         {
             return y(d["2022"]);
@@ -100,13 +100,13 @@ d3.json("data/foodtype_both.json", function (data)
         .data(data)
         .enter()
         .append("rect")
-        .style("fill", "red")
+        .style("fill", "#ffffff")
         .attr("class","2012")
         .attr("x", function(d)
         {
-            return x(d.typecode)+x.rangeBand()/2;
+            return x(d.typecode)-x.rangeBand()/2;
         })
-        .attr("width", x.rangeBand()/2)
+        .attr("width", x.rangeBand()/10)
         .attr("y", function (d)
         {
             return y(d["2012"]);
@@ -115,4 +115,13 @@ d3.json("data/foodtype_both.json", function (data)
         {
             return bheight - y(d["2012"]);
         })
+    barsvg.append('svg:image')
+        .attr('x',60)
+        .attr('y',0)
+        // .attr('width',500)
+        .attr('height',500)
+        .style('z-index',-2)
+        .attr('xlink:href','./img/waimai_7.png')
+
+
 })

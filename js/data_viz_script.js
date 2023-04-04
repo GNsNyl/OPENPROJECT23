@@ -12,27 +12,27 @@ var data = [
   {"id": 1, "name":"31-40", "r": 0.371 },
   {"id": 1, "name":"41-45", "r": 0.065 },
 
-  {"id": 2, "name": "<2000", "r": 0.04 },
-  {"id": 2, "name": "2000-3999", "r": 0.26 },
-  {"id": 2, "name":"4000-5999", "r": 0.44 },
-  {"id": 2, "name":"6000-7999", "r": 0.19 },
-  {"id": 2, "name":"8000-9999", "r": 0.05 },
-  {"id": 2, "name":">10000", "r": 0.02 },
+  {"id": 2, "name": "¥<2000", "r": 0.04 },
+  {"id": 2, "name": "¥2000-3999", "r": 0.26 },
+  {"id": 2, "name":"¥4000-5999", "r": 0.44 },
+  {"id": 2, "name":"¥6000-7999", "r": 0.19 },
+  {"id": 2, "name":"¥8000-9999", "r": 0.05 },
+  {"id": 2, "name":"¥>10000", "r": 0.02 },
 
   {"id": 3, "name": "video", "r": 0.363 },
-  {"id": 3, "name": "gaming", "r": 0.292 },
+  {"id": 3, "name": "video game", "r": 0.292 },
   {"id": 3, "name": "music", "r": 0.282 },
 
   {"id": 4, "name": "discrimination", "r": 0.36 },
   {"id": 4, "name": "traffic accident", "r": 0.293 },
   {"id": 4, "name": "scolded by customer", "r": 0.257 },
 
-  // {"id": 5, "name": "coworker relation", "r": 8.1 },
-  // {"id": 5, "name": "flexible working time", "r": 7.6 },
-  // {"id": 5, "name": "working environment", "r": 7.4},
-  // {"id": 5, "name": "income and benefit", "r": 7.0},
-  // {"id": 5, "name": "promotion", "r": 6.5 },
-  //   {"id": 5, "name": "social status", "r": 6.0 },
+  {"id": 5, "name": "coworker relation", "r": 0.81 },
+  {"id": 5, "name": "flexible working time", "r": 0.76 },
+  {"id": 5, "name": "working environment", "r": 0.74},
+  {"id": 5, "name": "income and benefit", "r": 0.70},
+  {"id": 5, "name": "promotion", "r": 0.65 },
+    {"id": 5, "name": "social status", "r": 0.60 },
 
   //   {"id": 6, "name": "coworker relation", "r": 6.5 },
   //  {"id": 6, "name": "flexible working hour", "r": 6.5 },
@@ -48,12 +48,11 @@ var data = [
 
   {"id": 7, "name": "confident", "r": 0.761 },
   {"id": 7, "name": "no increase", "r": 0.732 },
-  {"id": 7, "name": "replaced", "r": 0.8 },
+  {"id": 7, "name": "being replaced", "r": 0.8 },
 
   {"id": 5, "name": "insurance", "r": 0.487 },
   {"id": 5, "name": "labor right", "r": 0.451 },
   {"id": 5, "name": "income security", "r": 0.348 },
-  {"id": 5, "name": "insurance", "r": 0.487 },
 
   {"id": 8, "name": "higher salary", "r": 0.644 },
   {"id": 8, "name": "humane treatment", "r": 0.567 },
@@ -63,15 +62,15 @@ var data = [
 
 // var width = window.innerWidth,
     // height = 750;
-const demand_width = document.getElementById('demand').getBoundingClientRect().width - consti_margin.left - consti_margin.right;
-const demand_height = document.getElementById('demand').getBoundingClientRect().height - consti_margin.top - consti_margin.bottom;
+const demand_width = document.getElementById('demand').getBoundingClientRect().width;
+const demand_height = document.getElementById('demand').getBoundingClientRect().height;
 
-var fill = d3.scale.category10();
+// var fill = d3.scale.category10();
 
 var nodes = [], labels = [],
-    foci = [{x: 0, y: 500}, {x: 0.15*demand_width, y: 150}, {x: 0.3*demand_width, y: 500},
-      {x: 0.3*demand_width, y: 150}, {x: 0.45*demand_width, y: 500}, {x: 0.6*demand_width, y: 150},
-      {x: 0.6*demand_width, y: 500}, {x: 0.75*demand_width, y: 150}, {x: 0.9*demand_width, y: 500}];
+    foci = [{x: 0.05*demand_width, y: 500}, {x: 0.15*demand_width, y: 170}, {x: 0.3*demand_width, y: 500},
+      {x: 0.3*demand_width, y: 170}, {x: 0.45*demand_width, y: 170},{x: 0.45*demand_width, y: 500}, {x: 0.57*demand_width, y: 170},
+      {x: 0.6*demand_width, y: 500}, {x: 0.86*demand_width, y: 170}, {x: 0.9*demand_width, y: 500}];
 // function dataViz(){
 
 
@@ -83,7 +82,7 @@ var nodes = [], labels = [],
   var force = d3.layout.force()
       .nodes(nodes)
       .links([])
-      .charge(-400)
+      .charge(-1000)
       //.chargeDistance(200)
       .gravity(0.1)
       .friction(0.8)
@@ -96,7 +95,7 @@ var nodes = [], labels = [],
   var counter = 0;
 
   function tick(e) {
-    var k = 0.35 * e.alpha;
+    var k = 0.21 * e.alpha;
 
     // Push nodes toward their designated focus.
     nodes.forEach(function(o, i) {
@@ -116,7 +115,7 @@ var nodes = [], labels = [],
     var item = data[counter];
     nodes.push({id: item.id, r: item.r, name: item.name});
     force.start();
-    console.log(force.drag)
+    // console.log(force.drag)
 
     nodedemand = nodedemand.data(nodes);
 
@@ -132,26 +131,28 @@ var nodes = [], labels = [],
 
     n.append("circle")
         .attr("r",  function(d) { return 100*d.r; })
-        .style("stroke", "#36ff00")
-        .style("stroke-dasharray",3)
-        .style("fill", "none")
+        .style("stroke", "none")
+        .style("opacity", 0.5)
 
-        .style("stroke-width", 6.61)
+        // .style("stroke-dasharray",3)
+        .style("fill", "#a2a2a2")
+        .style("stroke-width", 6.61);
 
 
     // .style("fill", function(d) { return fill(d.id); })
 
     n.append("text")
         .text(function(d){
-          return d.name+"~"+d.r;
+          return d.name;
         })
         .style("fill", "#ffffff")
 
         .style("font-size", function(d) {
-          return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 16) + "px";
+          return 15;
         })
-        .attr("dy", ".35em")
-
+        .attr("dy", "0.35em");
+    // +"~"+d.r
+    // Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 16) + "px"
     counter++;
   }, 100);
 

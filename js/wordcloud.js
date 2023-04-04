@@ -3,283 +3,254 @@
 const myWords=[
     {
         "word": "YUAN",
-        "size": "23",
-        "link": [6,12,13,14,15,21,22,24,25,26,28,30]
+        'tcolor':'#36ff00',
+        'rot': '1',
+        'x':0.2,
+        'y':0.16,
+        'fill':'#ffffff',
+        'border':3,
+        'borderColor':'#000000',
+        "font": "Press_Start_2P",
+        "size": "89",
+    },
+    {
+        "word": "MAP",
+        'tcolor':'#000000',
+        'rot': '3',
+        'x':0.75,
+        'y':0.4,
+        'fill':'#ffffff',
+        'border':'solid',
+        'borderColor':'#cb5959',
+        "font": "Geostar_Fill",
+        "size": "10",
+        "link":"<p>density of restaurants, builidng footprints, roads</p>"
     },
     {
         "word": "ORDER",
-        "size": "37",
-        "link": [1, 2, 4, 5, 11, 16, 17, 19, 20, 21, 25, 26, 27, 28]
+        'tcolor':'#000000',
+        'rot': '0',
+        'x':0.01,
+        'y':0.23,
+        'fill':'#ffffff',
+        'border':2,
+        'borderColor':'#36ff00',
+        "font": "Press_Start_2P",
+        "size": "30",
+        "link":'<p>This project focuses on food delivery workers in China whose presence makes possible the elision of geopolitical distance that is crystallized to power by the digital undercurrent of the urban environment and the flow of capital. </p>'
     },
     {
-        "word": "TIRE",
-        "size": "4",
-        "link": [13, 23, 24, 29]
+        "word": "FORMS of assembLY",
+        'tcolor':'#000000',
+        'rot': '0',
+        'x':0.01,
+        'y':0.93,
+        'fill':'#ffffff',
+        'border':'solid',
+        'borderColor':'#cb5959',
+        "font": "Press_Start_2P",
+        "size": "10",
     },
     {
-        "word": "TRAFFIC",
-        "size": "3",
-        "link": [26, 27, 30]
+        "word": "ORGANIC",
+        'tcolor':'#000000',
+        'rot': '0',
+        'x':0.01,
+        'y':0.9,
+        'fill':'#ffffff',
+        'border':1,
+        'borderColor':'#36ff00',
+        "font": "Rubik_80s_Fade",
+        "size": "300",
+        "link":"<p>The project looks at the assembly of gig economy workers and their patches of livelihood that pale into indifference under the gig economy, through their precarious working condition, the affective labor, and the Orwellian labor coordination of algorithms.\n" +
+            "The project is composed of counter-narratives of the management literature boosting gig economy, roiling waves of the modernization promises that spouses and reifies the dominion of existing power structure.\n" +
+            "The objective is to increase the saliency of the “casualization of the workforce, informalization of the formal economy, and the so called ‘demutualization of risk’”[Valerio De Stefano] concurrent with the gig economy.</p>"
+    },
+    {
+        "word": "LAY claims",
+        'tcolor':'#000000',
+        'rot': '0',
+        'x':0.2,
+        'y':0.6,
+        'fill':'#ffffff',
+        'border':3,
+        'borderColor':'#36ff00',
+        "font": "Rampart_One",
+        "size": "100",
+        "link":"<p>policy suggetsions</p>"
+    },
+    {
+        "word": "laBOR",
+        'tcolor':'#36ff00',
+        'rot': '0',
+        'x':0.5,
+        'y':0.58,
+        'fill':'#ffffff',
+        'border':5,
+        'borderColor':'#000000',
+        "font": "Press_Start_2P",
+        "size": "150",
     },
     {
         "word": "TIME",
-        "size": "38",
-        "link": [1, 3, 6, 7, 9, 13, 14, 15, 16, 23, 25, 26, 27, 29, 30,]
+        'tcolor':'#36ff00',
+        'rot': '0',
+        'x':0.29,
+        'y':0.2,
+        'fill':'#ffffff',
+        'border':6,
+        'borderColor':'#000000',
+        "font": "Rampart_One",
+        "size": "150",
+        "link": '<img class="roundgif" src="img/waimai.gif" width="150">'
+    },
+    {
+        "word": "外卖",
+        'tcolor':'#000000',
+        'rot': '1',
+        'x':0.51,
+        'y':0.1,
+        'fill':'#ffffff',
+        'border':2,
+        'borderColor':'#36ff00',
+        "font": "ZCOOL_XiaoWei",
+        "size": "200",
+        "link": '<img class="roundgif" src="img/waim.gif" width="100" height="100" >'
     },
     {
         "word": "UNHAPPY",
-        "size": "6",
-        "link": [14, 16, 19, 25]
-    },
-    {
-        "word": "DILIGENT",
-        "size": "6",
-        "link": [22]
-    },
-    {
-        "word": "LATE",
-        "size": "5",
-        "link": [6, 14, 26, 28]
-    },
-    {
-        "word": "EXPECTATION",
-        "size": "4",
-        "link": [14, 21, 24]
-    },
-    {
-        "word": "DELIVER",
-        "size": "20",
-        "link": [4, 5, 6, 14, 15, 16, 17, 25, 27, 28, 30]
-    },
-    {
-        "word": "MINUTE",
-        "size": "20",
-        "link": [15, 17, 26, 27, 30]
-    },
-    {
-        "word": "HOUR",
-        "size": "6",
-        "link": [23, 24, 27]
-    },
-    {
-        "word": "LIFE",
-        "size": "2",
-        "link": [6, 16]
-    },
-    {
-        "word": "COMPANY",
-        "size": "5",
-        "link": [6, 14]
-    }]
-const contentData=[
-    {
-        "id": "1",
-        "content": "It stands to reason that I should send Zhengfang Building first, and then go to Y University Engineering College. But the schedule of the engineering college is tight. If the paper is sent to Zhengfang Building first, the bill will be overdue when it arrives at the engineering college. What do you think I should do? I had time to see the Zhengfang Building, so I went to the Engineering College first, which is equivalent to sending the far ones first and then the near ones. Who would have thought that, as soon as I arrived at the Institute of Technology, the customers of the Zhengfang Building called me and asked me how I got there. I said I went to the Engineering College first, because the order would be timed out, and kept telling her that I would be at the Zhengfang Building soon, but she didn't sound very happy, and said that it was because I saw me coming from the phone, It was only with good intentions that I went downstairs in advance, trying to save me time. I didn't admit that I thought about it, but I went to sleep elsewhere first, and I was very embarrassed to make people wait for a while in vain.",
-        "name": "Lao Mei"
-    },
-    {
-        "id": "2",
-        "content": "Order, order, order, why haven't you sent me an order.",
-        "name": "Zhao Xiaohai"
-    },
-    {
-        "id": "3",
-        "content":"You said that in this system, I was paid one by one, and I was given to four places in one afternoon, and \"slipped\" me eight times back and forth.",
-        "name": "Li Huahe"
-    },
-    {
-        "id": "4",
-        "content":"I ran until 10:00 p.m. yesterday, and after 9:00 p.m. I said I could get off work, but suddenly an order came to me. I just said that I was fine all afternoon, and I went home and went home, and gave me another order. As a result, it was almost 10 o'clock when the delivery was finished. It's okay if you don't send it.",
-        "name": "Mei Zhenmin"
-    },
-    {
-        "id": "5",
-        "content":"The students of University Y are really bad, and they are the pride of heaven. Two days ago, I delivered milk tea to a female classmate of University Y. The lid of the milk tea was not very tight. After I arrived at University Y, I found that the milk tea flowed out of the cup a little, just a little. I told the female classmate that the milk tea shop did not fasten the lid tightly when packing, and I was also somewhat responsible. So I just told her I'd pay her some money and forget it. The female classmate picked up the cup, looked at it, and said impatiently, \"Forget it, it's okay\", then turned around and went back. As a result, when I went back, the station called and said that a customer just gave a bad review. I thought I delivered that order all afternoon, so it wasn't just the bad review from the girl from Y University.",
-        "name": "Lao Wu"
-    },
-    {
-        "id": "6",
-        "content":"At that time, I was delivering food on the S platform, and I was hit by a car on the road once. However, the owner of the car is insured and is willing to pay compensation. The insurance company asked me to provide proof of income so that I could calculate the lost wages for me. I went to the office of Platform S in Beijing and asked them to issue an income certificate for me, but they refused to issue it to me, saying that it had nothing to do with them. I was earning about 10,000 yuan a month, and I was lying in the hospital for three months. I could get a lot of lost wages according to this standard, but the S platform refused to issue a certificate for me. Finally, the insurance company paid me according to the minimum wage standard in Beijing. Lost wages. To be honest, after that time, my heart was cold. These companies don't care about our life or death at all.",
-        "name": "Shen Jun"
-    },
-    {
-        "id": "7",
-        "content": "@Everyone is paying attention, the system is upgraded, and you must arrive at the store on time to report!",
-        "name": "Li Wei"
-    },
-    {
-        "id": "8",
-        "content": "What do you mean?",
-        "name": "Zhao Xiaohai"
-    },
-    {
-        "id": "9",
-        "content": "What does it mean to arrive at the store on time?",
-        "name": "Mei Zhenming"
-    },
-    {
-        "id": "10",
-        "content": "Just read the report and you will know.",
-        "name": "Li Wei"
-    },
-    {
-        "id": "11",
-        "content": "This whole thing, I can't even hang up the order!",
-        "name": "Qiu Wei"
-    },
-    {
-        "id": "12",
-        "content": "During the epidemic, the business in the store was not as good as before, and then my wife was alone in the store to look after the store, and then I said to myself, as a rider, I can earn more living expenses. Before the epidemic, the store made a lot of money, maybe 20,000 to 30,000 yuan a month.",
-        "name": "na"
-    },
-    {
-        "id": "13",
-        "content": "I repair cars and stay in the same shop every day. I have no time to go out from morning to night. Now I can enjoy the beautiful night view of the city at night. Because the factory is an assembly line, I will be very tired every day. I spent 6,000 yuan a month in the factory. . My family doesn't know that I do this.",
-        "name": "na"
-    },
-    {
-        "id": "14",
-        "content": "The water supply company is another project. I follow that project. I have been working on that project from internship to regularization, and then I have to wait for the next project to start. I came out in March this year. I waited at home for a month. Later, the company started a project in Shenzhen. The minimum salary was 2,000 yuan. The project started, and the company responded immediately. Because I also submitted some resumes at that time, in fact, they are almost the same. You are in Shenzhen, you are just an ordinary undergraduate, and your salary is only 4,000 to 5,000, which may not include food and housing, so it is not as good as my previous one. , so my family members definitely don't know about the food delivery now, but I will tell them later. My family has expectations for me. I can’t do this all the time, because my mother’s generation is basically girls, and I’m the first boy. They love me very much, so I dare not tell them. They understand me quite well, and they won't blame me if they say it, but they don't want to make them unhappy",
-        "name": "na"
-    },
-    {
-        "id": "15",
-        "content": "The more happy thing, I remember that some time ago, I delivered a meal, and it was overdue for 28 minutes, which was a serious overtime. My client applied for a refund, and then our webmaster explained it to me, and he also canceled it. Then it was cancelled. When I sent it to him, he didn't blame me, and finally gave me a tip of 10 yuan. So I think this is quite understandable.",
-        "name": "na"
-    },
-    {
-        "id": "16",
-        "content": "There are 20 colleagues living in a dormitory, and Meituan won a King of Glory Challenge. We formed a team in one dormitory. We won the first game, and then prepare for the second game on July 4th, but if it is big, we can play casually. It is impossible to go to Beijing to play the finals, because we have our own work to do here, so even if you have reimbursement expenses, we will not be able to get it. After all, we have to work and live. Anyway, tomorrow will be fine. happy. If you want to live a decent life, you must always have a smile on your face. If you are unhappy every day, you will not say it. Someone will take care of you or something, always being unhappy is not good for your health, so you have to be happy tomorrow. The most unhappy thing was the order reminder, I delivered it, but I didn’t answer the phone, I reported it to the platform successfully, everyone left, and after walking a long way, he called and asked me to deliver it to him. As far as we riders are concerned, we are actually quite good-natured, and we all take the soft but not the hard. I think sometimes when we go to deliver meals, some security guards are very arrogant and tell me to yell and yell. We definitely don’t want to, don’t we? We are food deliverers, food deliverers, and you didn't say why you didn't let us in. You just yelled at us before we got in. We definitely don't want to quarrel with you.",
-        "name": "na"
-    },
-    {
-        "id": "17",
-        "content": "I think most of the customers are pretty good, they can understand and tolerate and even give you tip, give you water in hot weather, and give you tips. There must be bad-tempered customers who keep urging for delivery within ten minutes after placing an order, otherwise they will give bad reviews.",
-        "name": "na"
-    },
-    {
-        "id": "18",
-        "content": "I give this industry 90 points out of 100. It must be hard work, but you have to work hard to get it. Anyway, the more you do, the more you get. Time is also relatively free. And the salary arrives faster.",
-        "name": "na"
-    },
-    {
-        "id": "19",
-        "content": "The most unhappy thing is that when claiming an order, due to network problems or mobile phone problems, the order cannot be claimed.",
-        "name": "na"
-    },
-    {
-        "id": "20",
-        "content": "This whole thing, I can't even hang up the order!",
-        "name": "na"
-    },
-    {
-        "id": "21",
-        "content": "Now the salary for the first month has not been paid yet, about 5,000 yuan, and there are not many orders in the first month, because there are not many orders in the first month, so it is almost within my expectation, and for veterans, it should be more than 1,000 orders , more than 8000 a month, running 1,300 orders can earn 10,000 yuan, it depends on personal ability.",
-        "name": "na"
-    },
-    {
-        "id": "22",
-        "content": "Anyway, if you are more diligent, you can get 7000-8000 yuan, if you are not so diligent, you can get 3000-5000.",
-        "name": "na"
-    },
-    {
-        "id": "23",
-        "content": "Sometimes I earned 11,000 last month, and I was tired because I got up at 7 in the morning, then arrived at 1 am in the evening, had more meals at 1 noon, and slept for two or three hours.",
-        "name": "na"
-    },
-    {
-        "id": "24",
-        "content": "The current level is about 6000-7000 yuan, which is very different from the expectation. I heard that there are 10000-20000 yuan before the expectation, but if you do 12 hours a day, 10000 yuan should be no problem. But the working hours are too long. This is a job, and its volume is very large, so it is unbearable to do it for too long. My personal feeling is that there is no hope. I give this job a 40 out of 100. Because first of all, it is hard and tiring, and the main income is too cost-effective.",
-        "name": "na"
-    },
-    {
-        "id": "25",
-        "content": "Each site may be different, our site runs 530 orders and gets 3650 yuan. 520-720 orders are 8 yuan without an order; 720 orders and above are 8.5 yuan; and then there is a supper subsidy (10:00pm-12:00am), which is 10 yuan. If the data of skilled people is good, the system will send orders to you first. There is an order king on our site. He guarantees 1,800 orders per month and a monthly income of 15,000 yuan. He usually has more orders than us during the peak period, and his time is also longer than ours. He ran from 11:00 noon to 3:00 am. Most people can't bear it physically, right? The trick is to be familiar with the road, nothing else, such as a neighborhood. Remember which building is which door. Isn't that what food delivery is like, there is no trick. We are special delivery, look at the data: if there are too many bad reviews and too many timeouts, the system will reduce the number of your orders. If your supermarket customer is unhappy and gives you another negative review, 50 yuan will be deducted, and the second negative review will deduct 100 yuan. We run 30 orders a day and earn 250 yuan.",
-        "name": "na"
-    },
-    {
-        "id": "26",
-        "content": "I will not violate traffic rules in a hurry. This time is enough, as long as you pick up the meal a little faster, basically the time is enough. Nayuki's tea is the shortest, because it only lasts 20 minutes. Once there is another order in 20 minutes, it must be timed out. Good reviews are useless to us, but a negative review will deduct 50 yuan, which will also affect the order acceptance rate.",
-        "name": "na"
-    },
-    {
-        "id": "27",
-        "content": "My online time must be more than 8 hours, even if I am not online, there are 1-2 hours, almost 10 hours a day. Because the delivery time is evaluated by the system, it may be 30 minutes at the beginning, and then some merchants are slow to deliver meals. You can report that the delivery time is slow. If you respond more, the time will be improved and you can catch up. After running for a month or two, there will be no overtime. But rainy days are different. On rainy days, if there are too many and too messy, it will blow the watch. I usually have 5 orders in my hand during the peak period, and 6-7 orders in rainy days. High-risk is definitely high-risk. Running a red light is a normal thing, too anxious. Because we have a lot of orders at a time, if you wait for the traffic light, you will be timed out in 30 seconds. The problem of timeout is not a big problem, and it will be a big deal for customers to give you a bad review.",
-        "name": "na"
-    },
-    {
-        "id": "28",
-        "content": "If you run 20-30 orders a day, half of the delivery fee will be deducted for being late, and 3 yuan will be deducted for bad reviews. Some delivery fees are only 4-5 yuan, and now the order quantity is less, and the unit price is also less. Anyway, our takeaway riders feel that the platform is getting more and more squeezed, and the price is getting lower and lower, which is getting harder and harder to do.",
-        "name": "na"
-    },
-    {
-        "id": "29",
-        "content": "It’s easy to see others running, but running by myself is tiring, because I’m not the same professional as them, they are more familiar with this road, like I used to go anywhere except to buy vegetables and materials every day. in the store every day. Then I am not familiar with many places, and sometimes it will time out or something.",
-        "name": "na"
-    },
-    {
-        "id": "30",
-        "content": "Some will be delivered with rewards. For example, how many minutes you send it in advance, he will reward you with 5 yuan. In fact, I don’t recommend doing this, because if you do it like this, many riders will blindly get the reward of a few dollars. If you want to go through the traffic lights and take the motorway to catch up with time, so you can increase the unit price, but don’t do it in this way, it’s not very good for the rider’s own safety.",
-        "name": "na"
-    },
-    // {
-    //     "id": "20",
-    //     "content": "This whole thing, I can't even hang up the order!",
-    //     "name": "na"
-    // }
-];
-let stories=[];
+        'tcolor':'#36ff00',
+        'rot': '1',
+        'x':0.1,
+        'y':0.1,
+        'fill':'#ffffff',
+        'border':0,
+        'borderColor':'#000000',
+        "font": "Libre_Barcode_39",
+        "size": "200",
+        "link": '<img class="roundgif" src="img/xiaoge.gif" width="120" height="120" >'
 
-for (let i = 0; i < contentData.length; i++) {
-    stories.push(contentData[i]["content"]);
-}
+    },
+    {
+        "word": "CARING",
+        'tcolor':'#36ff00',
+        'rot': '0',
+        'x':0.77,
+        'y':0.9,
+        'fill':'#ffffff',
+        'border':0.5,
+        'borderColor':'#000000',
+        "font": "Fredericka_the_Great",
+        "size": "50",
+        "link":'The gig economy, at the convergence of labor, technology, and the market, is about “metabolic rift,” systemic inequity, affective labor, dataveillance, informalization, hyper-subjectivity…\n' +
+            '\n' +
+            'In response to the prolonged working hours, the project is speaking to workers’ \n' +
+            '\tphysical needs: to sleep/rest\n' +
+            '\tand social need: to assemble \n' +
+            '\n' +
+            'The title Organic Caring comes from what Marx points out that human bodies, too, require organic care.\n'
+    },
+    {
+        "word": "ZGC",
+        'tcolor':'#36ff00',
+        'rot': '0',
+        'x':0.7,
+        'y':0.7,
+        'fill':'#ffffff',
+        'border':0,
+        'borderColor':'#000000',
+        "font": "Monoton",
+        "size": "90",
+        "link":'<p>The choice is because of a personal experience. I use to live in Haidian District, Beijing, during that for one of my undergrad project [a pastiche city documentary of Berlin Symphony of a City, and the Man with a Video Camera]. I was given a chance to observe the city. It was the year 2017, right in the middle of the fierce competition among several food delivery platforms. Haidian, packed with tech companies and universities, was one of the major fields of their competition.\n' +
+            '\t\t\t<br>To capture the rhythm of urban life, I was out on the street for 20 hours each day. Most often I saw food deliveries men (Xiaoge) either sitting near the back rack or rushing on their electric bicycles.\n' +
+            '\t\t\t<br>But does site really matter?\n' +
+            '\t\t</p>'
+    },
+    {
+        "word": "TIREEED",
+        'tcolor':'#000000',
+        'rot': '1',
+        'x':0.01,
+        'y':0.27,
+        'fill':'#ffffff',
+        'border':1,
+        'borderColor':'#36ff00',
+        "font": "Hnalei",
+        "size": "130",
+        "link": '<img class="roundgif" src="img/waimai.gif" width="100" height="100" >'
+
+    },
+]
+const literature=[
+    {
+    "title": "Bodies in Alliance and the Politics of the Street",
+    "author":'J. Butler',
+    "link":'<p>click to visit</p>',
+    "link2":'https://transversal.at/transversal/1011/butler/en'
+    },{
+    "title": "The Human Condition",
+    "author":'H. Arendt',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://monoskop.org/images/e/e2/Arendt_Hannah_The_Human_Condition_2nd_1998.pdf'
+},{
+    "title": "Mushroom at the end of the World",
+    "author":'A. Tsing',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://www.amazon.com/s?k=mushroom+at+the+end+of+the+world&hvadid=241924978495&hvdev=c&hvlocphy=1018092&hvnetw=g&hvqmt=e&hvrand=3618800577148364606&hvtargid=kwd-157326925024&hydadcr=22593_10348166&tag=googhydr-20&ref=pd_sl_17bv33xol4_e'
+},{
+    "title": "Capital",
+    "author":'C. Marx',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://www.marxists.org/archive/marx/works/download/pdf/Capital-Volume-I.pdf'
+},{
+    "title": "American Lucifers",
+    "author":'J. Zallen',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://uncpress.org/book/9781469653327/american-lucifers/'
+},{
+    "title": "Labor and Monopoly Capital",
+    "author":'H. Braverman',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://www.jstor.org/stable/j.ctt9qfrkf'
+},{
+    "title": "Big Other: Surveillance Capitalism and the Prospects of an Information Civilization.",
+    "author":'S. Zuboff',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://journals.sagepub.com/doi/10.1057/jit.2015.5'
+},{
+    "title": "The Rise of the ‘Just in Time Workforce’",
+    "author":'V.D. Stefano',
+    "link":'<p>click to visit</p>',
+
+    "link2":'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2682602'
+},
+
+    ]
+// const fontL=['Hnalei','Monoton','Press_Start_2P','Fredericka_the_Great','Libre_Barcode_39','Rampart_One','Rubik_80s_Fade','Zen_Kaku_Gothic_New']
 
 // set the dimensions and margins of the graph
-var cldmargin = {top: 10, right: 10, bottom: 10, left: 10},
+var cldmargin = {top: 0, right: 0, bottom: 0, left: 0},
     cldwidth = document.getElementById('word-cloud-container').getBoundingClientRect().width - cldmargin.left - cldmargin.right,
     cldheight = document.getElementById('word-cloud-container').getBoundingClientRect().height - cldmargin.top - cldmargin.bottom;
-
-// append the svg object to the body of the page
-var wordCldsvg = d3.select("#word-cloud-container").append("svg")
-    .attr("width", cldwidth + cldmargin.left + cldmargin.right)
-    .attr("height", cldheight + cldmargin.top + cldmargin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + cldmargin.left + "," + cldmargin.top + ")");
-// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
-// Wordcloud features that are different from one word to the other must be here
-var layout = d3.layout.cloud()
-    .size([cldwidth, cldheight])
-    .words(myWords.map(function(d) { return {text: d.word, size:d.size, link:d.link}; }))
-
-    .padding(35)        //space between words
-    .rotate(function() { return ~~(Math.random() * 2) * 90; })
-    .fontSize(function(d) { return 15*Math.log(d.size); })      // font size of words
-    .on("end", draw);
-layout.start();
-
-// This function takes the output of 'layout' above and draw the words
-// Wordcloud features that are THE SAME from one word to the other can be here
-function draw(words) {
-
+let wordCldsvg,wordsvg,litsvg;
+function draw(w,h,words) {
     var cldTooltipDiv = d3.select("#word-tool")
         .append("div")
         .style("opacity", 1)
         .attr("id", "tooltip-word")
-        .attr("class", "tooltip")
-        // .style("background-color", "white")
-        .style("color", "white");
+        .attr("class", "tooltip");
+        // .style("background-color", "white");
 
     var cldmouseover= function(d) {
-        var links = d.link;
-        var toolCont="";
-        for (let q=0;q<links.length;q++){
-            toolCont=toolCont+"\n"+stories[links[q]-1]
-        };
-
         cldTooltipDiv
             .html(
-                "<h1>STORIES</h1>"+
-                "<p> "+toolCont+"</p>"
+                d.link
             );
 
         cldTooltipDiv
@@ -287,45 +258,146 @@ function draw(words) {
             .duration(50)
             .style('left', d3.event.pageX +20+ 'px')
             .style('top', d3.event.pageY + 'px')
-            .style("opacity", 1);
+            // .style("opacity", 1)
+            .style ("display" , 'block');
+        ;
 
         d3.select(this)
+            // .transition()
+            // .duration(150)
+            .style("stroke", function(d){
+                return d.borderColor
+            })
+        if(d3.select(this)[0][0]['__data__'].word=='laBOR'){
+            addLiterature()
+        }
+    };
+    var cldmouseclick=function(d){
+
+            window.open(d.link2,'_blank')
+
+    }
+    var cldmousemove= function(d) {
+
+        cldTooltipDiv
             .transition()
             .duration(50)
-            .style("opacity", 1)
+            .style('left', d3.event.pageX +20+ 'px')
+            .style('top', d3.event.pageY + 'px')
+            .style ("display" , 'block')
+        ;
+            // .style('background-color', "#ffffff");
+            // .style("opacity", 1);
 
-        // .style("stroke", "#ffffff")
-
-        // .style("fill", "#36ff00")
     };
     var cldmouseleave = function(d) {
         cldTooltipDiv
             .transition ()
             .duration (50)
-            .style ("opacity" , 0);
+            .style ("display" , 'none');
 
         d3.select (this)
-            // .style("stroke", "none")
-            .transition ()
-            .duration (50)
-            .style ("opacity" , 0.35)
+            // .transition ()
+            // .duration (150)
+            .style("stroke", "none")
     };
-    wordCldsvg
-        .append("g")
-        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-        .selectAll("text")
-        .data(words)
-        .enter().append("text")
-        .style("font-size", function(d) { return 15*Math.log(d.size); })
-        .style("fill", "#ffffff")
-        .style("opacity", 0.35)
-        .attr("text-anchor", "middle")
-        .style("font-family", "Impact")
-        .attr("transform", function(d) {
-            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+// append the svg object to the body of the page
+    wordCldsvg = d3.select ("#word-cloud-container").append ("svg")
+        .attr ("width" , w + cldmargin.left + cldmargin.right)
+        .attr ("height" , h + cldmargin.top + cldmargin.bottom);
+
+    wordsvg=wordCldsvg.append ("g")
+        .selectAll ("bigtext>text")
+        .data (words)
+        .enter ()
+        .append ("text")
+        .attr('stroke-width',function(d){
+            return d.border
         })
-        .text(function(d) { return d.text; })
+        .attr('class',function(d){
+            return 'bigtext '+d.word})
+
+        .style ("font-size" , function(d) {
+            return d.size/1000*h
+        })
+
+        .style ("fill" , function(d) {
+            return d.tcolor
+        })
+        .style ("opacity" , 1)
+        .attr ("text-anchor" , "right")
+        .attr("class", "node")
+
+        // .attr ("display" , "flex")
+        .attr ("font-family" , function(d) {
+            return d.font
+        })
+        .attr ("transform" , function(d) {
+            return "translate(" + [d.x * w - 10 , d.y * h] + ")rotate(" + d.rot * 90 + ")";
+        })
+        .text (function(d) {
+            return d.word;
+        })
         .on("mouseover", cldmouseover)
-        // .on("mousemove", mousemove)
-        .on("mouseleave", cldmouseleave);
+        .on("mousemove", cldmousemove)
+        .on("mouseleave", cldmouseleave)
+    ;
+
+    function addLiterature(){
+        litsvg=wordCldsvg.append ("g")
+            .selectAll (".lit>text")
+            .data (literature)
+            .enter ()
+            .append ("text")
+            // .attr('stroke-width',function(d){
+            //     return d.border
+            // })
+
+            .style ("font-size" , 15)
+            .style ("fill" , '#000000')
+            .style ("opacity" , 1)
+            .style ("width" , 50)
+            .style ("display" , "flex")
+            .attr ("text-anchor" , "left")
+            .attr("class", "node lit")
+            // .attr ("display" , "flex")
+            .attr ("font-family" , 'Arial')
+            .attr ("transform" , function(d,i) {
+                return "translate(" + [0.7 * w - 10 , 0.5 * h] + ")rotate(" + i/20 * 360 + ")";
+            })
+            .text (function(d) {
+                return '---------'+d.author+' | '+d.title;
+            })
+            .on('click',cldmouseclick)
+            .on("mouseover", cldmouseover)
+            .on("mousemove", cldmousemove)
+            .transition()
+            .delay(8000)
+            // .duration(250)
+            .style('display','none');
+
+    }
 }
+
+draw(cldwidth,cldheight,myWords)
+
+
+// Redraw based on the new size whenever the browser window is resized.
+//
+// function updateWindow(){
+//     x = document.getElementById('word-cloud-container').getBoundingClientRect().width - cldmargin.left - cldmargin.right,
+//     y = document.getElementById('word-cloud-container').getBoundingClientRect().height - cldmargin.top - cldmargin.bottom;
+//     // cldwidth = document.getElementById('word-cloud-container').getBoundingClientRect().width - cldmargin.left - cldmargin.right,
+//     // cldheight = document.getElementById('word-cloud-container').getBoundingClientRect().height - cldmargin.top - cldmargin.bottom;
+//     // draw(cldwidth,cldheight,myWords)
+//     d3.select ("#word-cloud-container").attr("width", x).attr("height", y);
+//     wordsvg.attr("width", x).attr("height", y);
+//     wordsvg.selectAll('text')
+//         .
+//
+// }
+
+// window.addEventListener('resize', updateWindow);
+
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
