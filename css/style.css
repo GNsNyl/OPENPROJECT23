@@ -67,9 +67,9 @@ textarea { width: 100%; border: none; padding-top: 15px; padding-bottom: 35px; p
     font-size: 15px; line-height: 30px; letter-spacing: 1px; font-family: 'Roboto Light', sans-serif;}
 
 /*BUTTON______________________________________________________________________________________________________________*/
-button, .option-input { background-color: transparent; border: none; color: white; padding-top: 25px;
-    font-size: 15px; line-height: 30px; letter-spacing: 1px; font-family: 'Roboto Light', sans-serif;}
-button:hover{ text-decoration: underline; cursor:pointer;}
+/*button, .option-input { background-color: transparent; border: none; color: white; padding-top: 25px;*/
+/*    font-size: 15px; line-height: 30px; letter-spacing: 1px; font-family: 'Roboto Light', sans-serif;}*/
+/*button:hover{ text-decoration: underline; cursor:pointer;}*/
 
 /*TOOTLTIP______________________________________________________________________________________________________________*/
 .rect_tooltip_text{ font-size: 15px; line-height: 30px; letter-spacing: 1px; font-family: 'Roboto Light', sans-serif;}
@@ -137,4 +137,45 @@ button:hover{ text-decoration: underline; cursor:pointer;}
 
 text{
    font-size: x-small;
+}
+
+input{
+    width: 100%;
+    margin-top: 5px;
+
+    padding:2px;
+    font-family: Helvetica;
+    border:solid 6px;
+
+    color: #000000;
+    background: none;    /*border-color: #36ff00;*/
+    /*border-width: 3px;*/
+    border-radius: 8px;
+}
+textarea{
+    width: 100%;
+    padding:6px;
+
+    font-family: Helvetica;
+    border:solid 5px;
+    margin-top: 5px;
+    color: #000000;
+    background: none;
+    /*background-color: #000000;*/
+    /*border-color: #000000;*/
+    border-radius: 15px;
+
+}
+button{
+    /*height: 20px;*/
+    font-family: Helvetica;
+    display: inline-block;
+
+    margin-top: 5px;
+    color: #36ff00;
+    border:solid 5px;
+    background-color: black;
+    border-color: #36ff00;
+    /*border-width: 6px;*/
+    border-radius: 8px;
 }

@@ -81,6 +81,18 @@
 	<div id="word-cloud-container" style="z-index: 100; height: 100%; width:100%; position:fixed;"></div>
 	<div id="word-tool" style="z-index: 105; width:45%; margin:auto; pointer-events: none"></div>
 <div id="zgc-food-container" style="width:25%; height:40%; left:70%; position:fixed; z-index: 200"></div>
+
+<div class="form" style="position: fixed; width: 35vw; z-index: 500; top:60vh; right:1vw">
+	<form method="post" onsubmit="return sendemail()">
+		<input type="text" placeholder="name" id="'namee" autocomplete="off">
+		<input type="text" placeholder="youremail@email.com" id="'emaile" autocomplete="off">
+		<textarea placeholder="thoughts" id="message" cols="'20" rows="'10"></textarea>
+		<button id="btn">SEND FEEDBACK</button>
+<!--		<input type="submit" value="Submit">-->
+
+
+	</form>
+</div>
 <!--/////////////////////////////////////////////////////////////////////////-->
 <!-- embedding JS libraries -->
 <script src="js/libraries/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -94,5 +106,50 @@
 <script  src="./js/opening.js"></script>
 <script  src="./js/zgc.js"></script>
 <script  src="./js/wordcloud.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+	// function sendemail(){
+	// 	var name=document.getElementById('namee').value;
+	// 	var email=document.getElementById('emaile').value;
+	// 	var message=document.getElementById('message').value;
+	// 	var bodyemai='name:'+name+'<br>email'+email+'<br>message'+message
+	// 	Email.send({
+	// 		Host : "smtp.gail.com",
+	// 		Username : "work.liu.ys@gmail.com",
+	// 		Password : "nmrosmsaddoujsoo",
+	// 		To : 'work.liu.ys@gmail.com"',
+	// 		From : email,
+	// 		Subject : "OP feedback",
+	// 		Body : bodyemai
+	// 	}).then(
+	// 			message => alert(message)
+	// 	);
+	// 	console.log(message)
+	//
+	// }
+	var btn=document.getElementById('btn');
+	btn.addEventListener('click', function(e){
+		e.preventDefault()
+		console.log(document.getElementById('namee'))
+
+		var name=document.getElementById('namee').value;
+		var email=document.getElementById('emaile').value;
+		var message=document.getElementById('message').value;
+		var bodyemai='name:'+name+'<br>email'+email+'<br>message'+message
+		Email.send({
+			Host : "smtp.gail.com",
+			Username : "work.liu.ys@gmail.com",
+			Password : "nmrosmsaddoujsoo",
+			To : 'lyunsong@umich.edu',
+			From : email,
+			Subject : "OP feedback",
+			Body : bodyemai
+		}).then(
+				message => alert(message)
+		);
+
+	})
+</script>
 </body>
 </html>
