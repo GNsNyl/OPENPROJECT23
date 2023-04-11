@@ -58,6 +58,7 @@ d3.json("data/foodtype_both.json", function (data)
         .attr("transform", "translate(0, " + bheight + ")")
         .call(xAxis)
         .selectAll("text")
+        .style('fill','#000000')
         .style("text-anchor", "middle")
         .attr("dx", "-2.5em")
         .attr("dy", "-2.9em")
@@ -68,6 +69,7 @@ d3.json("data/foodtype_both.json", function (data)
         .attr("class", "y axis")
         .call(yAxis)
         .append("text")
+        .style('fill','#000000')
         .attr("transform", "rotate(0)")
         .attr("y", -10)
         .attr("dy", "0.8em")
@@ -86,7 +88,7 @@ d3.json("data/foodtype_both.json", function (data)
         {
             return x(d.typecode);
         })
-        .attr("width", x.rangeBand()/10)
+        .attr("width", x.rangeBand()/5)
         .attr("y", function (d)
         {
             return y(d["2022"]);
@@ -100,13 +102,13 @@ d3.json("data/foodtype_both.json", function (data)
         .data(data)
         .enter()
         .append("rect")
-        .style("fill", "#ffffff")
+        .style("fill", "#000000")
         .attr("class","2012")
         .attr("x", function(d)
         {
             return x(d.typecode)-x.rangeBand()/2;
         })
-        .attr("width", x.rangeBand()/10)
+        .attr("width", x.rangeBand()/5)
         .attr("y", function (d)
         {
             return y(d["2012"]);
@@ -115,13 +117,13 @@ d3.json("data/foodtype_both.json", function (data)
         {
             return bheight - y(d["2012"]);
         })
-    barsvg.append('svg:image')
-        .attr('x',60)
-        .attr('y',0)
-        // .attr('width',500)
-        .attr('height',500)
-        .style('z-index',-2)
-        .attr('xlink:href','./img/waimai_7.png')
+    // barsvg.append('svg:image')
+    //     .attr('x',60)
+    //     .attr('y',0)
+    //     // .attr('width',500)
+    //     .attr('height',500)
+    //     .style('z-index',-2)
+    //     .attr('xlink:href','./img/waimai_7.png')
 
 
 })

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/style.css">
 <!--	<link rel="stylesheet" href="/css/style2.css">-->
 	<!-- GOOGLE FONTS -->
-	<link href="fonts/roboto" rel="stylesheet">
+<!--	<link href="fonts/roboto" rel="stylesheet">-->
 	<style>
 		*{
 			cursor:auto;
@@ -167,6 +167,15 @@ maps the intersectional movement across political economic and technological con
 		But she didn't sound very happy, and said that it was because she saw me coming from her mobile phone that she kindly went downstairs in advance to save me time. Unexpectedly, I went to another place first, and I was quite embarrassed to let people wait for a while. "[ by Long Chen]
 	</p>
 </div>
+
+	<div class="section" style="margin-top:10vh ">
+	<h1>Restaurant Counts</h1>
+	<p class="text-col">
+		The number of restaurants in Haidian District in the year 2012 and 2022.
+	</p>
+	<div id="restaurant-bar-container"></div>
+
+</div>
 </section>
 
 
@@ -190,47 +199,28 @@ maps the intersectional movement across political economic and technological con
 
 <section id="story">
 
+<!--<div class="section"style="height: 70vh;margin-top:20vh "  >-->
+<!--	<h1>population</h1>-->
+<!--	<div id="pop-container" style="height: 70%; width:100%; position:absolute;"></div>-->
+<!--	<div id="tool" style="width: 300px; margin:auto;"></div>-->
+<!--</div>-->
 
-<div class="section" style="margin-top:80vh ">
-<h1>Restaurant Counts</h1>
-	<p class="text-col">
-		The number of restaurants in Haidian District in the year 2012 and 2022.
-	</p>
-	<div id="restaurant-bar-container"></div>
+</section>
 
-</div>
-
-<div class="section"style="height: 70vh;margin-top:20vh "  >
-	<h1>population</h1>
-	<div id="pop-container" style="height: 70%; width:100%; position:absolute;"></div>
-	<div id="tool" style="width: 300px; margin:auto;"></div>
-</div>
-<div class="section"style="margin-top:60vh; left:-10vw;"  >
-	<h1>Zhongguancun</h1>
-	<div id="zgc-container" style="height: 70%; width:100%; position:absolute;"></div>
-	<div id="zgc-road-container" style="height: 70%; width:100%; position:absolute;"></div>
-	<div id="zgc-building-container" style="height: 70%; width:100%; position:absolute;"></div>
-	<div id="zgc-count-container" style="height: 70%; width:100%; position:absolute;"></div>
-
-	<div id="zgc-food-container" style="height: 70%; width:100%; position:absolute;"></div>
-
-	<div id="zgc-tool" style="width: 300px; margin:auto;"></div>
-</div>
-
-<div class="section"style="margin-top:80vh "  >
-	<h1>Wordcloud</h1>
-	<div id="word-cloud-container" style="height: 70%; width:100%; position:absolute;"></div>
-	<div id="word-tool" style="width: 300px; margin:auto; pointer-events: none"></div>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-
+<section id="policy">
+	<div class="section"style="height: 100vh;margin-top:20vh "  >
+		<h1>policy suggestion</h1>
+		<p2>Article 1.</p2> <p3>there must be a daily rest of eleven consecutive hours per 24-hour period. must ensure weekly working time is limited by law or collective agreement.</p3>
+			<p2>Article 2.</p2> <p3>free health assessments for workers.</p3>
+			<p2>Article 3.</p2> <p3>higher basic salary and rate for each order.</p3>
+			<p2>Article 4.</p2> <p3> there must be a grace period for the penalty policy regarding bad reviews during which no change in terms of allocation shall be enforced.</p3>
+			<p2>Article 5.</p2> <p3> Workers must have the chance to file an appeal after a customer complaint</p3>
+			<p2>Article 6.</p2> <p3>workers who risk health can be given guarantees.</p3>
+			<p2>Article 7.</p2> <p3> the platform shall have workshops or training sessions.</p3>
+			<p2>Article 8.</p2> <p3> Workers shall be given the chance to rate the difficulty of locating the address
+		</p3>
+<!--		<div id="policy-container" style="height: 90%; width:100%; position:absolute;"></div>-->
+	</div>
 </section>
 
 <!-- embedding JS libraries -->
@@ -245,28 +235,29 @@ maps the intersectional movement across political economic and technological con
 
 <!-- landing -->
 <script src="js/libraries/jquery-3.2.1.js"></script>
-<script src='/js/three.min.js'></script>
+<!--<script src='/js/three.min.js'></script>-->
 <script src='js/libraries/simplex-noise.js'></script>
 <script src='js/libraries/gsap.min.js'></script>
 
 <!-- landing: own js -->
-<!--	<script  src="/js/sketch.js"></script>-->
+
 <!-- constituencies diagram  -->
 	<script src='js/libraries/d3.v3.min.js'></script>
 <!--<script src='js/libraries/d3.v4.min.js'></script>-->
 <script src="js/libraries/d3.layout.cloud.js"></script>
-<script  src="./js/constituencies.js"></script>
+<!--<script  src="./js/constituencies.js"></script>-->
 
 
 <!--mapping: own js-->
 <script src='js/libraries/react.production.min.js'></script>
 <script src='js/libraries/react-dom.production.min.js'></script>
 
-<!--<script  src="./js/restaurant-plot.js"></script>-->
-<!--<script  src="./js/food_script.js"></script>-->
+<script  src="./js/restaurant-plot.js"></script>
+<script  src="./js/food_script.js"></script>
 <!--<script  src="./js/pop.js"></script>-->
-<script  src="./js/zgc.js"></script>
-<!--<script  src="./js/wordcloud.js"></script>-->
+<!--<script  src="./js/zgc.js"></script>-->
+
+<!--<script  src="./js/policy.js"></script>-->
 
 
 
