@@ -5,6 +5,8 @@ var food3;
 const button_chart = document.getElementsByName('rest-map');
 let button_chart_value_yr = '2022';
 let foodData="data/food2022.json";
+plotMap(foodData);
+
 
 function displayRestValue() {
     for (let i = 0; i < button_chart.length; i++) {
@@ -14,42 +16,47 @@ function displayRestValue() {
             foodData="data/food"+button_chart_value_yr+".json";
             // console.log(foodData);
             d3.selectAll("#map > *").remove();
-            plotMap(foodData,colorPalette[i]);
+
+            plotMap(foodData);
         }
     }
 };
+function plotMap(foodData){
 
-d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
+d3.json(foodData, function() {
   // width and height
   w = window.innerWidth;
   h = window.innerHeight;
-    svg0 = d3.select("#map")
-          .append("svg")
-          .attr("width", w)
-          .attr("height", h);
+svg0 = d3.select("#map")
+      .append("svg")
+    .attr('id','base-map')
+      .attr("width", w)
+      .attr("height", h);
   projection = d3.geo.mercator()
       .scale(130000)
       .translate([w/2, h/2])
       .center([116.259,40.02]);
   land = d3.geo.path()
       .projection(projection);
-  world = svg0.selectAll(".world>path")
-    .data(json.features)
-    .enter()
-    .append("path")
-      .attr('class','world')
-    .attr("d", land)
-    .style("fill", "#ffffff")
-      .style("stroke-width", 3)
-      .style('stroke', "#000000")
-      .style("opacity", 1);
+    d3.json('data/haidian.geojson', function(data) {
+        world = svg0.selectAll(".world>path")
+            .data(data.features)
+            .enter()
+            .append("path")
+            .attr('class','world')
+            .attr("d", land)
+            .style("fill", "#ffffff")
+            .style("stroke-width", 3)
+            .style('stroke', "#36ff00")
+            .style("opacity", 1);
+    })
 
     d3.json(foodData, function(data) {
         food3 = svg0.selectAll("#map > circle")
             .data(data.features)
             .enter()
             .append("circle")
-            .style("opacity", 0.5)
+
             .style("fill", "none")
             .style("stroke", "#000000")
             .style("stroke-width", 0.1)
@@ -59,10 +66,14 @@ d3.json("data/beijing-municipality_1140 copy.geojson", function(json) {
             })
             .attr("cy", function(d) {
                 return projection([d.LON, d.LAT])[1];
-            });
+            })
+            .style("opacity", 0)
+            .transition()
+            .duration(550)
+            .style("opacity", 0.5);
     });
-// });
 })
+}
 
 
 window.addEventListener('resize', function(){

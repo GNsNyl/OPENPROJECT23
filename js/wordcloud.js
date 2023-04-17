@@ -11,6 +11,8 @@ const myWords=[
         'borderColor':'#000000',
         "font": "Press_Start_2P",
         "size": "89",
+        "link2":"index_0.html#mapplot"
+
     },
     {
         "word": "MAP",
@@ -127,7 +129,8 @@ const myWords=[
         'borderColor':'#36ff00',
         "font": "ZCOOL_XiaoWei",
         "size": "200",
-        "link": '<img class="roundgif" src="img/waim.gif" width="100" height="100" >'
+        "link": '<img class="roundgif" src="img/waim.gif" width="100" height="100" >',
+        "link2":"index_0.html#mapplot"
     },
     {
         "word": "UNHAPPY",
@@ -142,8 +145,6 @@ const myWords=[
         "size": "200",
         "link": '<img class="roundgif" src="img/xiaoge.gif" width="120" height="120" >',
         "link2":"index_0.html#story"
-
-
     },
     {
         "word": "CARING",
@@ -162,7 +163,9 @@ const myWords=[
             '\tphysical needs: to sleep/rest\n' +
             '\tand social need: to assemble \n' +
             '\n' +
-            'The title Organic Caring comes from what Marx points out that human bodies, too, require organic care.\n'
+            'The title Organic Caring comes from what Marx points out that human bodies, too, require organic care.\n',
+        "link2":"index_0.html#mapplot"
+
     },
     {
         "word": "ZGC",
@@ -175,10 +178,8 @@ const myWords=[
         'borderColor':'#000000',
         "font": "Monoton",
         "size": "90",
-        "link":'<p>The choice is because of a personal experience. I use to live in Haidian District, Beijing, during that for one of my undergrad project [a pastiche city documentary of Berlin Symphony of a City, and the Man with a Video Camera]. I was given a chance to observe the city. It was the year 2017, right in the middle of the fierce competition among several food delivery platforms. Haidian, packed with tech companies and universities, was one of the major fields of their competition.\n' +
-            '\t\t\t<br>To capture the rhythm of urban life, I was out on the street for 20 hours each day. Most often I saw food deliveries men (Xiaoge) either sitting near the back rack or rushing on their electric bicycles.\n' +
-            '\t\t\t<br>But does site really matter?\n' +
-            '\t\t</p>'
+        "link":'<p>The site Zhonguancun is in Haidian, Beijing, China.</p>',
+        "link2":"index_0.html#mapplot"
     },
     {
         "word": "TIREEED",
@@ -191,8 +192,8 @@ const myWords=[
         'borderColor':'#36ff00',
         "font": "Hnalei",
         "size": "130",
-        "link": '<img class="roundgif" src="img/waimai.gif" width="100" height="100" >'
-
+        "link": '<img class="roundgif" src="img/waimai.gif" width="100" height="100" >',
+        "link2":"index_0.html#story"
     },
 ]
 const literature=[
@@ -245,9 +246,7 @@ const literature=[
         "link2":'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2682602'
     },
 
-]
-// const fontL=['Hnalei','Monoton','Press_Start_2P','Fredericka_the_Great','Libre_Barcode_39','Rampart_One','Rubik_80s_Fade','Zen_Kaku_Gothic_New']
-
+];
 // set the dimensions and margins of the graph
 var cldmargin = {top: 0, right: 0, bottom: 0, left: 0},
     cldwidth = document.getElementById('word-cloud-container').getBoundingClientRect().width - cldmargin.left - cldmargin.right,
