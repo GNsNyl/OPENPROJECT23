@@ -43,8 +43,8 @@ function init() {
     // });
     // const textureList=['texture','texture1','texture2']
     const n=100;
-    for(let i =0; i<6;i++){
-        var texture=loader.load('img/texture/t'+i%3+'.png')
+    // for(let i =0; i<6;i++){
+        var texture=loader.load('img/texture/t1.png')
         const material = new THREE.MeshStandardMaterial( {
             // color:'#c9daae',
             map : texture,
@@ -54,15 +54,15 @@ function init() {
 
         } );
         mesh = new THREE.Mesh(geometry, material);
-        mesh.position.z=(Math.random()-0.5)*n/3;
-        mesh.position.x=(Math.random()-0.5)*3*n;
-        mesh.position.y=(Math.random()-0.5)*n;
-        mesh.rotation.x=(Math.random()-0.5)*1.7;
-        mesh.rotation.y=(Math.random()-0.5)*1.7;
-        mesh.rotation.z=(Math.random()-0.5)*3.7;
+        // mesh.position.z=(Math.random()-0.5)*n/3;
+        // mesh.position.x=(Math.random()-0.5)*3*n;
+        // mesh.position.y=(Math.random()-0.5)*n;
+        // mesh.rotation.x=(Math.random()-0.5)*1.7;
+        // mesh.rotation.y=(Math.random()-0.5)*1.7;
+        // mesh.rotation.z=(Math.random()-0.5)*3.7;
 
         scene.add(mesh);
-    }
+    // }
 
     // console.log(texture)
 

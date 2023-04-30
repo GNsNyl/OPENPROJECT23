@@ -22,7 +22,6 @@ function displayRestValue() {
     }
 };
 function plotMap(foodData){
-
 d3.json(foodData, function() {
   // width and height
   w = window.innerWidth;
@@ -32,12 +31,14 @@ svg0 = d3.select("#map")
     .attr('id','base-map')
       .attr("width", w)
       .attr("height", h);
-  projection = d3.geo.mercator()
+  projection = d3.geoMercator()
       .scale(130000)
       .translate([w/2, h/2])
       .center([116.259,40.02]);
-  land = d3.geo.path()
+  land = d3.geoPath()
       .projection(projection);
+    // console.log(projection)
+
     d3.json('data/haidian.geojson', function(data) {
         world = svg0.selectAll(".world>path")
             .data(data.features)
@@ -47,7 +48,7 @@ svg0 = d3.select("#map")
             .attr("d", land)
             .style("fill", "#ffffff")
             .style("stroke-width", 3)
-            .style('stroke', "#36ff00")
+            .style('stroke', "#000000")
             .style("opacity", 1);
     })
 

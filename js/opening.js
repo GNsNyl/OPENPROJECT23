@@ -17,7 +17,7 @@ function drawAll(){
             this.distance=0;
             this.force=0;
             this.angle=0
-            this.size =3;
+            this.size =2;
             this.ease=0.2;
             this.friction=0.95;
             this.vx=0;

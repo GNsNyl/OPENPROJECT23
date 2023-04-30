@@ -68,9 +68,9 @@ const demand_height = document.getElementById('demand').getBoundingClientRect().
 // var fill = d3.scale.category10();
 
 var nodes = [], labels = [],
-    foci = [{x: 0.05*demand_width, y: 500}, {x: 0.15*demand_width, y: 170}, {x: 0.3*demand_width, y: 500},
+    foci = [{x: 0.1*demand_width, y: 500}, {x: 0.15*demand_width, y: 170}, {x: 0.3*demand_width, y: 500},
       {x: 0.3*demand_width, y: 170}, {x: 0.45*demand_width, y: 170},{x: 0.45*demand_width, y: 500}, {x: 0.57*demand_width, y: 170},
-      {x: 0.6*demand_width, y: 500}, {x: 0.86*demand_width, y: 170}, {x: 0.9*demand_width, y: 500}];
+      {x: 0.6*demand_width, y: 500}, {x: 0.76*demand_width, y: 170}, {x: 0.89*demand_width, y: 500}];
 // function dataViz(){
 
 
@@ -131,12 +131,14 @@ var nodes = [], labels = [],
 
     n.append("circle")
         .attr("r",  function(d) { return 100*d.r; })
-        .style("stroke", "none")
+        .style("stroke", '#000000')
         .style("opacity", 0.5)
 
         // .style("stroke-dasharray",3)
-        .style("fill", "#a2a2a2")
-        .style("stroke-width", 6.61);
+        // .style("fill", "#a2a2a2")
+        .style("fill", "none")
+
+        .style("stroke-width", 0.5);
 
 
     // .style("fill", function(d) { return fill(d.id); })
@@ -145,7 +147,7 @@ var nodes = [], labels = [],
         .text(function(d){
           return d.name;
         })
-        .style("fill", "#ffffff")
+        .style("fill", "#6c6c6c")
 
         .style("font-size", function(d) {
           return 15;
